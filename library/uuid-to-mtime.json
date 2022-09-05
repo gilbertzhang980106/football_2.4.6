@@ -895,8 +895,8 @@
     "relativePath": "Script\\lightUI\\managers\\TaskAbs.ts"
   },
   "2d2f792f-a40c-49bb-a189-ed176a246e49": {
-    "asset": 1662361705874,
-    "meta": 1662361705895,
+    "asset": 1662367959060,
+    "meta": 1662367959124,
     "relativePath": "Scene\\mainLobby.fire"
   },
   "cffcd874-9a00-4c09-95f4-c3f999d8a03d": {
@@ -975,8 +975,8 @@
     "relativePath": "Resource\\Texture\\zhenxing.png"
   },
   "36c75c2c-8206-4e9a-b87a-f9a22b0997c4": {
-    "asset": 1662351646830,
-    "meta": 1662351646840,
+    "asset": 1662367907910,
+    "meta": 1662367907935,
     "relativePath": "Resource\\Prefabs\\top_bar.prefab"
   },
   "2b9904ed-8d87-44e6-9004-70dd4d1764ec": {
@@ -993,5 +993,30 @@
     "asset": 1662361069453,
     "meta": 1662361069470,
     "relativePath": "Resource\\Prefabs\\card_small.prefab"
+  },
+  "fd717061-f11d-423b-ae71-811d30829c0e": {
+    "asset": 1662362242713,
+    "meta": 1662362242724,
+    "relativePath": "Resource\\Prefabs\\rule_info.prefab"
+  },
+  "a7653576-e355-4711-a2a2-37af1edf486c": {
+    "asset": 1662365292765,
+    "meta": 1662365292779,
+    "relativePath": "Resource\\Prefabs\\layer_reward_card.prefab"
+  },
+  "fc76818f-8a98-401e-8322-50a54fe74cb6": {
+    "asset": 1662367749610,
+    "meta": 1662367749625,
+    "relativePath": "Resource\\Prefabs\\layer_card_history.prefab"
+  },
+  "9be175c8-adaa-408d-aa6e-a0703af6150f": {
+    "asset": 1662367762822,
+    "meta": 1662367762830,
+    "relativePath": "Resource\\Prefabs\\toast.prefab"
+  },
+  "fcccd884-1005-4418-82d1-f8b614c826c8": {
+    "asset": 1662367849053,
+    "meta": 1662367849062,
+    "relativePath": "Resource\\Prefabs\\my_card_item.prefab"
   }
 }
