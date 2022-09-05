@@ -5,9 +5,7 @@
     },
     "exclude": [
         "node_modules",
-        "library",
-        "local",
-        "settings",
-        "temp"
-    ]
+        "module": "commonjs",
+        "experimentalDecorators": true
+    }
 }
