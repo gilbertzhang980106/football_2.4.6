@@ -895,8 +895,8 @@
     "relativePath": "Script\\lightUI\\managers\\TaskAbs.ts"
   },
   "2d2f792f-a40c-49bb-a189-ed176a246e49": {
-    "asset": 1662367959060,
-    "meta": 1662367959124,
+    "asset": 1662370851812,
+    "meta": 1662370851860,
     "relativePath": "Scene\\mainLobby.fire"
   },
   "cffcd874-9a00-4c09-95f4-c3f999d8a03d": {
@@ -1018,5 +1018,30 @@
     "asset": 1662367849053,
     "meta": 1662367849062,
     "relativePath": "Resource\\Prefabs\\my_card_item.prefab"
+  },
+  "d2502914-5173-42ec-9a9e-06a697d42e59": {
+    "asset": 1662369635545,
+    "meta": 1662369635555,
+    "relativePath": "Resource\\Prefabs\\btn_gp_2.prefab"
+  },
+  "f0d10d00-a7e1-4241-a243-bb9ff76bac54": {
+    "asset": 1662369734140,
+    "meta": 1662369734150,
+    "relativePath": "Resource\\Prefabs\\btn_level_gp.prefab"
+  },
+  "458fad77-45c7-4c31-9e20-80fe195c6ac5": {
+    "asset": 1662370648273,
+    "meta": 1662370648282,
+    "relativePath": "Resource\\Prefabs\\exchange_item.prefab"
+  },
+  "4a600424-65cf-449b-8a6a-f77a71d98c4e": {
+    "asset": 1662370693761,
+    "meta": 1662370694151,
+    "relativePath": "Resource\\Prefabs\\layer_card_exchange.prefab"
+  },
+  "0d0270cb-377b-437b-8027-3068ebffb78a": {
+    "asset": 1662370759904,
+    "meta": 1662370759911,
+    "relativePath": "Resource\\Prefabs\\activity_info.prefab"
   }
 }
