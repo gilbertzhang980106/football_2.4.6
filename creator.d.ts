@@ -4,6 +4,9 @@ The main namespace of Cocos2d-JS, all engine core classes, functions, properties
 !#zh
 Cocos 引擎的主要命名空间，引擎代码中所有的类，函数，属性和常量都在这个命名空间中定义。 */
 declare namespace cc {	
+
+	export var EventManager:cc.EventTarget;
+
 	/** The current version of Cocos2d being used.<br/>
 	Please DO NOT remove this String, it is an important flag for bug tracking.<br/>
 	If you post a bug to forum, please attach this flag. */
@@ -1688,6 +1691,7 @@ declare namespace cc {
 	@param referenceNode referenceNode 
 	*/
 	export function find(path: string, referenceNode?: Node): Node;	
+	export function findNode(name: string, referenceNode: Node): Node;
 	export var dynamicAtlasManager: DynamicAtlasManager;	
 	/** !#en The matrix storage */
 	export var matrix: any[];	

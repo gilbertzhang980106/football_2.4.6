@@ -1,7 +1,7 @@
 import HallNotification from "../events/HallNotification";
 import HallAlert from "../utils/HallAlert";
 import MountDataAbs from "../../lightUI/components/MountDataAbs";
-import HallFacade from "../HallFacase";
+import HallFacade from "./HallFacase";
 
 /**
  * 这里处理与服务器段的http通信事务  游戏相关接口在这里
@@ -98,14 +98,8 @@ export default class GameHttpService extends com.lightMVC.parrerns.Model impleme
             this.isShowAlert = false;
             HallFacade.getInstance().sentNotification(HallNotification.HALL_QUIT);
             HallFacade.getInstance().sentNotification(HallNotification.MAINLAYER_HIDE);
-            HallFacade.getInstance().sentNotification(HallNotification.CLB_MIAN_HIDE);
-            HallFacade.getInstance().sentNotification(HallNotification.TH_MIAN_HIDE);
             //LightUI.removeAllUI();
-
         });
-
-
-
     }
 
 
@@ -150,10 +144,6 @@ export default class GameHttpService extends com.lightMVC.parrerns.Model impleme
 
             xhr.open("POST", url, true);
 
-
-
-
-
             xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
             xhr.setRequestHeader('Access-Control-Allow-Methods', 'GET, POST');
             xhr.setRequestHeader('Access-Control-Allow-Headers', 'x-requested-with,content-type');
@@ -171,81 +161,16 @@ export default class GameHttpService extends com.lightMVC.parrerns.Model impleme
 }
 
 export class HttpUrlManager {
-
     public rootIp: string = window.GetAppConfig()['gameHttp'] + ':' + window.GetAppConfig()['gameWsPort'] + '/api/';
     public version: string = "v1";
 
     //--------------------------createroom-------------------------
     public get clubSeachScore(): string {
-
         return this.rootIp + this.version + "/point/queryPoint";
-
     }
 
     //创建桌台
     public get createClubDesk(): string {
         return this.rootIp + this.version + "/desk/createClubDesk";
-    }
-
-    //更新桌台
-    public get updateClubDesk(): string {
-        return this.rootIp + this.version + "/desk/updateClubDesk";
-    }
-
-    //删除桌台
-    public get getDeleteClubDesk(): string {
-        return this.rootIp + this.version + "/desk/deleteClubDesk/";
-    }
-
-    //查询桌台
-    public get queryClubDesks(): string {
-        return this.rootIp + this.version + "/desk/queryClubDesks";
-    }
-    // 加入好友房间
-    public get queryJoinRoomCode(): string {
-        return this.rootIp + this.version + "/desk/checkClubDesk";
-    }
-    //俱乐部排行榜
-    public get queryThRecordRank(): string {
-        return this.rootIp + this.version + "/rankRecord/queryRecord"
-    }
-    //俱乐部 查询排名
-    public get queryAllLeaderboard(): string {
-        return this.rootIp + this.version + "/clubrecord/query-all-leaderboard";
-    }
-
-    //俱乐部 删除单个或者所有
-    public get deleteLeaderboard(): string {
-        return this.rootIp + this.version + "/clubrecord/delete-leaderboard";
-    }
-    // 排行榜清理
-    public get rankClearRecord(): string {
-        return this.rootIp + this.version + "/rankRecord/clearRecord";
-    }
-    // 排行榜统计
-    public get rankRecordStatis(): string {
-        return this.rootIp + this.version + "/rankRecord/statistics"
-    }
-    // 排行榜清理
-    public get rankClearRecordAll(): string {
-        return this.rootIp + this.version + "/rankRecord/clearAll";
-    }
-    //俱乐部 统计
-    public get countAllLeaderboardInfo(): string {
-        return this.rootIp + this.version + "/clubrecord/count-all-leaderboard-info";
-    }
-
-
-    /** 战绩查询*/
-    public get zhanjiRecrod(): string {
-        return this.rootIp + this.version + "/game/queryBetRecords";
-    }
-    /** 战绩详情*/
-    public get betRecordDetails(): string {
-        return this.rootIp + this.version + "/game/betRecordsDetails";
-    }
-    /** 牛牛战绩详情*/
-    public get NNbetRecordDetails(): string {
-        return this.rootIp + this.version + "/game/niuNiuRecordsDetails"
     }
 }
