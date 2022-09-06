@@ -43,7 +43,7 @@ export namespace gameData {
         /**主页信息 用户信息 */
         public static requestMainHomeInfo(callback: Function) {
             let param = {
-                token: gameData.roomData.tokenData,
+                // token: gameData.roomData.tokenData,
             }
             let _url = gameData.roomData.requestUrl + "home";
             gameData.httpServer.httpGetCallBack(_url, param, function (data: any) {
@@ -112,8 +112,9 @@ export namespace gameData {
             for (var key in param) {
                 params.push(key + '=' + param[key]);
             }
-            var dataStr = params.join('&');
-            url += "?" + dataStr;
+            //参数拼接方式
+            // var dataStr = params.join('&');
+            // url += "?" + dataStr;
 
             xhr.onreadystatechange = function () {
                 if (xhr.readyState === 4 && xhr.status == 200) {
@@ -130,10 +131,11 @@ export namespace gameData {
             xhr.withCredentials = true;
             xhr.open('GET', url, true);
 
-            xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+            xhr.setRequestHeader('Access-Control-Allow-Origin', 'http://localhost:7456');
             xhr.setRequestHeader('Access-Control-Allow-Headers', 'x-requested-with,content-type,authorization');
             xhr.setRequestHeader("Content-Type", " text/html");
-            if (param.token) xhr.setRequestHeader('Authorization', param.token);
+            // if (param.token) xhr.setRequestHeader('Authorization', param.token);
+            xhr.setRequestHeader('Authorization', gameData.roomData.tokenData);
 
             // xhr.setRequestHeader('tenantId', param.tenantId);
             xhr.timeout = 8000;// 8 seconds for timeout
