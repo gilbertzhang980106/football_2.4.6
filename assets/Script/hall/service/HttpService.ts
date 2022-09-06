@@ -15,9 +15,8 @@ export default class HttpService extends com.lightMVC.parrerns.Model implements 
 
     public static NAME: string = "HttpService";
 
-    public urlM: HttpUrlManager = new HttpUrlManager();
     public tenantId: string = "AS";
-    private _token: string;
+    private _token: string = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOjI2MzMxLCJhdWQiOiIiLCJleHAiOjE2NjUwNDcyNzgsImlhdCI6MTY2MjQ1NTI3OCwiaXNzIjoiIiwianRpIjoiYTljYzEyMzhlY2MwZDg2NDhhMGNjN2UwODQ4MGQ4MTEiLCJuYmYiOjE2NjI0NTUyNzgsInN1YiI6IiJ9.ITQC7zbvDV8OpUrTfO3o69STngyxbg30Q90UH6FaNGw";
 
     public static readonly POST: string = "POST";
     public static readonly PUT: string = "PUT";
@@ -26,7 +25,6 @@ export default class HttpService extends com.lightMVC.parrerns.Model implements 
         super(HttpService.NAME);
         this.token = cc.sys.localStorage.getItem('token');
         this.tenantId = cc.sys.localStorage.getItem('tenantId') || 'AS';
-        // this.urlM.rootIp = window.haoyunconfig.ip;
     }
 
     public get token(): string {
@@ -39,22 +37,15 @@ export default class HttpService extends com.lightMVC.parrerns.Model implements 
         // console.log("set token==>", value);
         this._token = value;
         cc.sys.localStorage.setItem('token', this._token);
-
-
         let games: GameHttpService = HallFacade.getInstance().getModel(GameHttpService.NAME) as GameHttpService;
         if (games) games.token = this._token;
     }
 
     public loginByTel(param: { account: string, pwd: string }) {
-        
         // this.sendRequest();
     }
 
-
     httpGetCallBack(url, param, callback: Function, hasTenantId: boolean = false) {
-
-
-
         let xhr = cc.loader.getXMLHttpRequest();
         this.tenantId = cc.sys.localStorage.getItem('tenantId') || 'AS';
         param = (param) ? param : {};
@@ -103,12 +94,8 @@ export default class HttpService extends com.lightMVC.parrerns.Model implements 
         xhr.setRequestHeader('Access-Control-Allow-Headers', 'x-requested-with,content-type,authorization');
         xhr.setRequestHeader("Content-Type", " text/html");
         if (this.token) xhr.setRequestHeader('Authorization', this.token);
-
-
-
         xhr.setRequestHeader('tenantId', this.tenantId);
         xhr.timeout = 8000;// 8 seconds for timeout
-
         xhr.send();
     }
 
@@ -125,7 +112,6 @@ export default class HttpService extends com.lightMVC.parrerns.Model implements 
             HallFacade.getInstance().sentNotification(HallNotification.HALL_QUIT);
             HallFacade.getInstance().sentNotification(HallNotification.MAINLAYER_HIDE);
             //LightUI.removeAllUI();
-
         });
     }
 
@@ -268,7 +254,6 @@ export default class HttpService extends com.lightMVC.parrerns.Model implements 
         })
     }
 
-
     /**
      * 发送post 请求
      * @param url 
@@ -326,62 +311,4 @@ export default class HttpService extends com.lightMVC.parrerns.Model implements 
         })
 
     }
-}
-
-export class HttpUrlManager {
-    public rootIp: string = gameData.roomData.api + ":" + gameData.roomData.apiport + "/api/";
-    public version: string = "v1";
-
-    // 获取落地页
-    public get getUrlWeb(): string {
-        return this.rootIp + this.version + "/supportstaff/query-landingpage-address";
-    }
-    //手机号码登录
-    public get by_tel(): string {
-        return this.rootIp + this.version + "/login/by-tel";
-    };
-    //账号登录
-    public get by_user_no(): string {
-        return this.rootIp + this.version + "/login/by-user-no";
-    }
-    //验证koten
-    public get verify_token(): string {
-        return this.rootIp + this.version + "/login/verify-token";
-    }
-
-    public get tel_retrieve_pwd(): string {
-        return this.rootIp + this.version + "/login/tel-retrieve-pwd";
-    }
-    public get send_verify_code(): string {
-        return this.rootIp + this.version + "/login/send-verify-code";
-    }
-
-    public get bind_tel(): string {
-        return this.rootIp + this.version + "/login/bind-tel";
-    }
-
-    public get bing_account(): string {
-        return this.rootIp + this.version + "/login/bind-account";
-    }
-
-    public get mail_mine(): string {
-        return this.rootIp + this.version + "/mail/mine";
-    }
-
-    public get mail_read(): string {
-        return this.rootIp + this.version + "/mail/read";
-    }
-
-    public get mail_del(): string {
-        return this.rootIp + this.version + "/mail/delete";
-    }
-
-    public get mail_refuseOrAgreeMail(): string {
-        return this.rootIp + this.version + "/mail/refuseOrAgreeMail";
-    }
-
-    public get unbind_wechat(): string {
-        return this.rootIp + this.version + "/login/unbind-wechat";
-    }
-
 }

@@ -1,5 +1,5 @@
 
-import {DznSocket} from "../../Common/src/DznSocket"
+import { DznSocket } from "../../Common/src/DznSocket"
 import { utils } from "./utils"
 import { gameData } from "./gameData";
 
@@ -9,12 +9,10 @@ const {ccclass, property} = cc._decorator;
 export default class netCom extends cc.Component {   
 
     logonData = {
-        ip : "10.63.98.40",
-        port : "12000",
-        gameCode : "NIU_NIU",
-        desk : "2000",
-        token : "eyJhbGciOiJIUzI1NiJ9.eyJjdXJyZW5jeVR5cGUiOiJDTlkiLCJoZWFkSWNvbiI6Imh0dHA6Ly9tLmltZWl0b3UuY29tL3VwbG9hZHMvYWxsaW1nLzIwMTYwNjI4MTcvem1tdWNjaG92eW4uanBnIiwibG9naW5UeXBlIjoiVVNFUiIsIm5pY2tOYW1lIjoiQmVybmllIiwiYWdlbmN5SWQiOiIiLCJ1c2VyTmFtZSI6ImJvZ2FuIiwidXNlcklkIjoiMyIsImhlYWRJZCI6bnVsbCwiYmFsYW5jZSI6bnVsbCwibG9naW5JcCI6IjEyNy4wLjAuMSIsImFjY291bnRObyI6bnVsbCwidGVuYW50SWQiOm51bGwsInVzZXJUeXBlIjoiQ0VOVFJBTElaRSIsImV4cCI6MTYyNDc1NzkyNjI0NywiaWF0IjoxNjI0Njg1OTI2MjQ3fQ._T0PW0Njvp-zTMbnbpRgoxK6l8sqiYZS7KD8Wh5znHQ",
-        channelld :1,
+        ip : "http://devhdzx.leyuqx5.com",
+        port : "",
+        gameCode : "",
+        token : "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOjI2MzMxLCJhdWQiOiIiLCJleHAiOjE2NjUwNDcyNzgsImlhdCI6MTY2MjQ1NTI3OCwiaXNzIjoiIiwianRpIjoiYTljYzEyMzhlY2MwZDg2NDhhMGNjN2UwODQ4MGQ4MTEiLCJuYmYiOjE2NjI0NTUyNzgsInN1YiI6IiJ9.ITQC7zbvDV8OpUrTfO3o69STngyxbg30Q90UH6FaNGw",
     }
 
     static instance:netCom = null;
@@ -25,38 +23,27 @@ export default class netCom extends cc.Component {
     }
 
     start(){
-        let token = utils.GetQueryVariable(window.location.href, "token");
-        let gameCode = utils.GetQueryVariable(window.location.href, "gameCode");//外网 游戏code
-        let desk = utils.GetQueryVariable(window.location.href, "desk");//外网 房间号
-        let gameWs = utils.GetQueryVariable(window.location.href, "gameWs");//socket ip
-        let api = utils.GetQueryVariable(window.location.href, "api");//大厅服
-        let lobbyPort = utils.GetQueryVariable(window.location.href, "lobbyPort");//大厅服端口号
-        let gameWsPort = utils.GetQueryVariable(window.location.href, "gameWsPort");//socket 端口号
-        let tenantId = utils.GetQueryVariable(window.location.href, "tenantId");//外网 端口
-        let ws = utils.GetQueryVariable(window.location.href, "ws");//https || https 
-        let gameHttpPort = utils.GetQueryVariable(window.location.href, "gameHttpPort");//游戏服http端口号
-        let gameHttp = utils.GetQueryVariable(window.location.href, "gameHttp");//游戏服http
+        let token = utils.GetQueryVariable(window.location.href, "token") || netCom.instance.logonData.token;//用户token
+        let lobbyApiHttp = utils.GetQueryVariable(window.location.href, "lobbyHttp") || netCom.instance.logonData.ip;//主页接口请求地址
+        let lobbyPort = utils.GetQueryVariable(window.location.href, "lobbyPort") || netCom.instance.logonData.port;;//主页接口请求地址端口号
         
         gameData.roomData.setTokenData(token);
-        gameData.roomData.setIp(gameWs);
-        gameData.roomData.setApi(api);
+        gameData.roomData.setHttp(lobbyApiHttp);
         gameData.roomData.setApiport(lobbyPort);
-        gameData.roomData.setPort(gameWsPort);
-        gameData.roomData.setTenantId(tenantId);
-        gameData.roomData.wsData(ws);
-        gameData.roomData.gameHttpPort(gameHttpPort);
-        gameData.roomData.gameHttp(gameHttp);
-
-
-        let wsUrl = gameData.roomData.ws + gameWs + ':' + gameWsPort + "/game/" + gameCode + '/' + desk + '/';
-        // DznSocket.OnConnect(GetAppConfig().wsUrl+ token);//内网测试
-        DznSocket.OnConnect(wsUrl + token);//外网
-
+        gameData.roomData.setRequestUrl();
         
+
+        /**请求主页信息
+         * 1-玩家信息
+         * 2-基础配置信息
+         */
+        gameData.httpServer.requestMainHomeInfo(function(data: apiData.home_info){
+            console.log("用户信息以及活动配置信息",data);
+        });
     }
 
     update (dt:number) {
-        DznSocket.OnMissionUpdate();
+        // DznSocket.OnMissionUpdate();
     }
     
 }

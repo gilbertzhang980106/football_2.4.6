@@ -7,20 +7,15 @@ import HallFacade from "./HallFacase";
  * 这里处理与服务器段的http通信事务  游戏相关接口在这里
  */
 export default class GameHttpService extends com.lightMVC.parrerns.Model implements com.lightMVC.interfaces.IModel {
-
     public static NAME: string = "GameHttpService";
-
-    public urlM: HttpUrlManager = new HttpUrlManager();
     public tenantId: string = "AS";
-    private _token: string;
-
+    private _token: string = "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOjI2MzMxLCJhdWQiOiIiLCJleHAiOjE2NjUwNDcyNzgsImlhdCI6MTY2MjQ1NTI3OCwiaXNzIjoiIiwianRpIjoiYTljYzEyMzhlY2MwZDg2NDhhMGNjN2UwODQ4MGQ4MTEiLCJuYmYiOjE2NjI0NTUyNzgsInN1YiI6IiJ9.ITQC7zbvDV8OpUrTfO3o69STngyxbg30Q90UH6FaNGw";
     public static readonly POST: string = "POST";
     public static readonly PUT: string = "PUT";
 
     constructor() {
         super(GameHttpService.NAME);
         this.token = cc.sys.localStorage.getItem('token');
-        // this.urlM.rootIp = window.haoyunconfig.ip;
     }
 
     public get token(): string {
@@ -79,7 +74,7 @@ export default class GameHttpService extends com.lightMVC.parrerns.Model impleme
         xhr.setRequestHeader("Content-Type", " text/html");
         if (this.token) xhr.setRequestHeader('Authorization', this.token);
 
-        xhr.setRequestHeader('tenantId', this.tenantId);
+        // xhr.setRequestHeader('tenantId', this.tenantId);
         xhr.timeout = 8000;// 8 seconds for timeout
 
         xhr.send();
@@ -157,20 +152,5 @@ export default class GameHttpService extends com.lightMVC.parrerns.Model impleme
 
             xhr.send(JSON.stringify(params));
         })
-    }
-}
-
-export class HttpUrlManager {
-    public rootIp: string = window.GetAppConfig()['gameHttp'] + ':' + window.GetAppConfig()['gameWsPort'] + '/api/';
-    public version: string = "v1";
-
-    //--------------------------createroom-------------------------
-    public get clubSeachScore(): string {
-        return this.rootIp + this.version + "/point/queryPoint";
-    }
-
-    //创建桌台
-    public get createClubDesk(): string {
-        return this.rootIp + this.version + "/desk/createClubDesk";
     }
 }

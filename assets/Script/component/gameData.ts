@@ -3,20 +3,14 @@ import Dictionary from "../lightUI/utils/Dictionary";
 
 export namespace gameData {
     /**
-     * 房间信息
+     * 主页信息
      */
     export class roomData {
-        public static reConnectState = "";
         public static tokenData = "";//
-        public static tenantId = "";//
-        public static ip = "";//
-        public static api = "";//
-        public static apiport = "";//
-        public static port = "";//
-        public static ws = "";//
         public static http = "";//
-        public static gamehttpPort = "";
-        public static gamehttp = "";
+        public static apiport = "";//
+        public static requestUrl = "";
+        
         /** 跑马灯消息*/
         public static MARQUEE: any[];
 
@@ -28,37 +22,16 @@ export namespace gameData {
             this.tokenData = data;
         }
 
-        public static setTenantId(tenantId: string) {
-            this.tenantId = tenantId;
-        }
-
-        public static setIp(data: string) {
-            this.ip = data;
-        }
-
-        public static setApi(data: string) {
-            this.api = data;
+        public static setHttp(data: string) {
+            this.http = data;
         }
 
         public static setApiport(data: string) {
             this.apiport = data;
         }
-
-        public static setPort(data: string) {
-            this.port = data;
-        }
-
-        public static wsData(ws: string) {
-            this.ws = ws =="true"? "ws://" : "wss://";
-            this.http = ws =="true"? "http://" : "https://";
-        }
         
-        public static gameHttpPort(data: string){
-            this.gamehttpPort = data;
-        }
-
-        public static gameHttp(data: string){
-            this.gamehttp = data;
+        public static setRequestUrl() {
+            this.requestUrl = gameData.roomData.http + gameData.roomData.apiport + "/api/v1/Star/";
         }
     }
 
@@ -66,95 +39,21 @@ export namespace gameData {
      * 接口请求
      */
     export class httpServer {
-        public static requestUrl = gameData.roomData.http + gameData.roomData.api + ':'+gameData.roomData.apiport + "/api/v1/";
-        /**请求大奖池中奖记录 */
-        public static requestJackpotRecord(orderType, userId, callback: Function) {
-            // /api/v1/jackpot/query?1=1&orderType=TIME&userId=00000114
+        // public static requestUrl = 
+        /**主页信息 用户信息 */
+        public static requestMainHomeInfo(callback: Function) {
             let param = {
-                1: 1,
-                orderType: orderType, //AMOUNT-历史 TIME-近期
-                userId: userId, //"" 所有 id-指定用户
                 token: gameData.roomData.tokenData,
-                // tenantId: gameData.roomData.tenantId,
             }
-            let _url = gameData.roomData.http + gameData.roomData.api + ':'+gameData.roomData.apiport + "/api/v1/" + "jackpot/query";
+            let _url = gameData.roomData.requestUrl + "home";
             gameData.httpServer.httpGetCallBack(_url, param, function (data: any) {
-                console.log(data);
                 callback && callback(data);
             });
-        }
-
-        /**请求活动开启目录 */
-        public static requestRedBagStatus(callback: Function) {
-            let param = {
-                pageSize: 100, //页总条数
-                token: gameData.roomData.tokenData,
-                tenantId: gameData.roomData.tenantId,
-            }
-            let _url = gameData.roomData.http + gameData.roomData.api + ':' + gameData.roomData.apiport + "/api/v1/activity/list" 
-            gameData.httpServer.httpGetCallBack(_url, param, function (data: any) {
-                console.log(data);
-                callback && callback(data);
-            });
-        }
-
-        /**请求红包中奖记录 */
-        public static requestRedBagRecord(pageIndex, pageSize, callback: Function) {
-            let param = {
-                pageIndex: pageIndex, //页数
-                pageSize: pageSize, //页总条数
-                activityType: "RED_ENVELOPE",//活动类型
-                token: gameData.roomData.tokenData,
-                tenantId: gameData.roomData.tenantId,
-            }
-            let _url = gameData.roomData.http + gameData.roomData.api + ':'+ gameData.roomData.apiport + "/api/v1/activity/list-record" 
-            gameData.httpServer.httpGetCallBack(_url, param, function (data: any) {
-                console.log(data);
-                callback && callback(data);
-            });
-        }
-
-        /**http加载文件 */
-        public static httpUpload(path, file, callback: Function, ) {
-            let url = gameData.roomData.http + gameData.roomData.ip + ':'+ gameData.roomData.gamehttpPort + "/v1/" + path;
-            let xhr = cc.loader.getXMLHttpRequest();
-            let forms = new FormData();
-
-            forms.append('name', file.name)
-
-
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4 && xhr.status == 200) {
-                    let respone: any = xhr.responseText;
-                    callback(respone);
-                    if (respone) respone = JSON.parse(respone);
-                    console.log("respone ", respone instanceof Array, respone);
-
-                } else if (xhr.readyState === 4 && xhr.status == 400) {
-                    let respone = JSON.parse(xhr.responseText);
-                    console.log("respone err", respone);
-                } else {
-                }
-            }.bind(this);
-
-            xhr.withCredentials = true;
-            xhr.open('post', url, true);
-
-            xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
-            xhr.setRequestHeader('Access-Control-Allow-Headers', 'x-requested-with,content-type,authorization');
-            xhr.setRequestHeader("Content-Type", " text/html");
-            xhr.setRequestHeader('Authorization', gameData.roomData.tokenData);
-
-            xhr.setRequestHeader('tenantId', gameData.roomData.tenantId);
-            xhr.timeout = 8000;// 8 seconds for timeout
-
-            xhr.send(forms);
-
         }
 
         /**post回调 */
         public static httpPostCallBack(path, params, callback: Function, fireParam: boolean = false) {
-            let url = gameData.roomData.http + gameData.roomData.gamehttp + ':'+gameData.roomData.gamehttpPort + "/v1/" + path;
+            let url = gameData.roomData.http + ':'+gameData.roomData.apiport + "/v1/" + path;
             return new Promise((resolve, reject) => {
                 var xhr = cc.loader.getXMLHttpRequest();
                 xhr.onreadystatechange = function () {
@@ -195,7 +94,6 @@ export namespace gameData {
 
                 xhr.setRequestHeader('Authorization', gameData.roomData.tokenData);
 
-                xhr.setRequestHeader('tenantId', gameData.roomData.tenantId);
                 xhr.timeout = 8000;// 5 seconds for timeout
                 if (params == null) {
                     xhr.send();
@@ -237,28 +135,12 @@ export namespace gameData {
             xhr.setRequestHeader("Content-Type", " text/html");
             if (param.token) xhr.setRequestHeader('Authorization', param.token);
 
-            xhr.setRequestHeader('tenantId', param.tenantId);
+            // xhr.setRequestHeader('tenantId', param.tenantId);
             xhr.timeout = 8000;// 8 seconds for timeout
 
             xhr.send();
         }
 
-    }
-
-    /**
-     * 缓存数据管理
-     * 清除缓存
-     */
-    export class StorageData {
-        public static clearStorage() {
-            // let token = cc.sys.localStorage.getItem("token");
-            // let tenantId = cc.sys.localStorage.getItem("tenantId");
-            // let zmIdx = cc.sys.localStorage.getItem("zuomianIdx");
-            // cc.sys.localStorage.clear();
-            // cc.sys.localStorage.setItem("token",token);
-            // cc.sys.localStorage.setItem("tenantId",tenantId);
-            // cc.sys.localStorage.setItem("zuomianIdx",zmIdx);
-        }
     }
 
     /**
