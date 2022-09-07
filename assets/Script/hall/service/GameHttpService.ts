@@ -32,9 +32,11 @@ export default class GameHttpService extends com.lightMVC.parrerns.Model impleme
     }
     httpGet(url, param, callback: Function) {
 
-        let lobbyhttp = window.GetAppConfig()['lobbyhttp'];
-        let htp = lobbyhttp.split(':')[0];
-        url = htp + "://" + url;
+        // let lobbyhttp = window.GetAppConfig()['lobbyhttp'];
+        // let htp = lobbyhttp.split(':')[0];
+        // url = htp + "://" + url;
+
+        url = window.GetAppConfig()['apiAdrress'] + url;
 
 
         let xhr = cc.loader.getXMLHttpRequest();
@@ -46,9 +48,9 @@ export default class GameHttpService extends com.lightMVC.parrerns.Model impleme
         for (var key in param) {
             params.push(key + '=' + param[key]);
         }
-        var dataStr = params.join('&');
-        url += "?" + dataStr;
-        this.sentNotification(HallNotification.SMALL_LOADING_SHOW, "httpGetCallBack");
+        // var dataStr = params.join('&');
+        // url += "?" + dataStr;
+        // this.sentNotification(HallNotification.SMALL_LOADING_SHOW, "httpGetCallBack");
 
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4 && xhr.status == 200) {
@@ -56,12 +58,12 @@ export default class GameHttpService extends com.lightMVC.parrerns.Model impleme
                 if (respone) respone = JSON.parse(respone);
 
                 callback && callback(respone)
-                this.sentNotification(HallNotification.SMALL_LOADING_HIDE, "httpGetCallBack");
+                // this.sentNotification(HallNotification.SMALL_LOADING_HIDE, "httpGetCallBack");
             } else if (xhr.readyState === 4 && xhr.status == 400) {
                 let respone = JSON.parse(xhr.responseText);
 
                 HallAlert.SmallAlert(respone.message);
-                this.sentNotification(HallNotification.SMALL_LOADING_HIDE, "httpGetCallBack");
+                // this.sentNotification(HallNotification.SMALL_LOADING_HIDE, "httpGetCallBack");
             } else if (xhr.readyState === 4 && xhr.status == 401) {
                 this.checkErro();
             }
@@ -152,5 +154,13 @@ export default class GameHttpService extends com.lightMVC.parrerns.Model impleme
 
             xhr.send(JSON.stringify(params));
         })
+    }
+
+    /**主页信息 用户信息 */
+    public requestMainHomeInfo(callback: Function) {
+        let param = {}
+        this.httpGet("home", param, function (data: any) {
+            callback && callback(data);
+        });
     }
 }

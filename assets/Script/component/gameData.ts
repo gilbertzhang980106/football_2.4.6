@@ -22,10 +22,30 @@ export namespace gameData {
     }
 
     /**
+     * 用户信息
+     */
+    export class userInfo {
+        public static usereInfo: apiData.user_info = null;//用户信息
+        public static drawCard: any[] = [];//用户拥有的卡片数组
+        public static configData: apiData.config_info = null;//活动配置信息
+
+        public static setUsereInfo(data: any){
+            this.usereInfo = data;
+        }
+
+        public static setDrawCard(data: any){
+            this.drawCard = data;
+        }
+
+        public static setConfigData(data: any){
+            this.configData = data;
+        }
+    }
+
+    /**
      * 接口请求
      */
     export class httpServer {
-        // public static requestUrl = 
         /**主页信息 用户信息 */
         public static requestMainHomeInfo(callback: Function) {
             let param = {}
@@ -148,9 +168,9 @@ export namespace gameData {
                 }.bind(this);
 
                 xhr.open("POST", url, true);
-                // xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
-                // xhr.setRequestHeader('Access-Control-Allow-Methods', 'GET, POST');
-                // xhr.setRequestHeader('Access-Control-Allow-Headers', 'x-requested-with,content-type');
+                xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+                xhr.setRequestHeader('Access-Control-Allow-Methods', 'GET, POST');
+                xhr.setRequestHeader('Access-Control-Allow-Headers', 'x-requested-with,content-type');
                 xhr.setRequestHeader("Content-Type", "application/json");
                 xhr.setRequestHeader('Authorization', gameData.roomData.tokenData);
 
@@ -192,6 +212,10 @@ export namespace gameData {
 
             xhr.withCredentials = true;
             xhr.open("GET", url, true);
+
+            // xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+            // xhr.setRequestHeader('Access-Control-Allow-Methods', 'GET, POST');
+            // xhr.setRequestHeader('Access-Control-Allow-Headers', 'x-requested-with,content-type');
             xhr.setRequestHeader("Content-Type", " text/html");
             xhr.setRequestHeader('Authorization', gameData.roomData.tokenData);
             xhr.timeout = 8000;// 8 seconds for timeout

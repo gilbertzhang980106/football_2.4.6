@@ -430,8 +430,8 @@
     "relativePath": "Resource\\Prefabs\\top_bar.prefab"
   },
   "2b9904ed-8d87-44e6-9004-70dd4d1764ec": {
-    "asset": 1662352827858,
-    "meta": 1662352827870,
+    "asset": 1662540069962,
+    "meta": 1662540070041,
     "relativePath": "Resource\\Prefabs\\player_info.prefab"
   },
   "93af72ad-ec5a-47c4-b92d-a3c2b6882a47": {
@@ -541,7 +541,7 @@
   },
   "74a3c679-694c-4f48-a076-a6b126bcc715": {
     "asset": 1634386894317,
-    "meta": 1662431636052,
+    "meta": 1662541844983,
     "relativePath": "Script\\hall\\lightMVC.js"
   },
   "c4aa6f3d-2d1d-4730-ac67-aedc0fe9b519": {
@@ -620,8 +620,8 @@
     "relativePath": "Resource\\Prefabs\\output_list.prefab"
   },
   "2d2f792f-a40c-49bb-a189-ed176a246e49": {
-    "asset": 1662519186643,
-    "meta": 1662519186913,
+    "asset": 1662541636185,
+    "meta": 1662541636350,
     "relativePath": "Scene\\mainLobby.fire"
   },
   "f76f879a-45cf-4f50-a038-954184c0cb1f": {
@@ -704,11 +704,6 @@
     "meta": 1662444311978,
     "relativePath": "Resource\\Prefabs\\cards_record_layer.prefab"
   },
-  "34c10b0d-2279-4e8c-ab87-75bff16b759b": {
-    "asset": 1662456086231,
-    "meta": 1662457894272,
-    "relativePath": "Script\\hall\\service\\GameHttpService.ts"
-  },
   "8ea86d3d-b6ee-487b-b6d6-0fbf0a49d889": {
     "asset": 1662455644713,
     "meta": 1662457894483,
@@ -723,16 +718,6 @@
     "asset": 1662517065910,
     "meta": 1662520963525,
     "relativePath": "config.js"
-  },
-  "e9677c47-e1f6-465b-bc1b-a093d2fa343c": {
-    "asset": 1662517094015,
-    "meta": 1662517140719,
-    "relativePath": "Script\\component\\gameData.ts"
-  },
-  "101baa28-360e-456e-93ae-fc997014db3a": {
-    "asset": 1662517132130,
-    "meta": 1662517140853,
-    "relativePath": "Script\\component\\netCom.ts"
   },
   "9836134e-b892-4283-b6b2-78b5acf3ed45": {
     "asset": 1662305101455,
@@ -1233,5 +1218,30 @@
     "asset": 1662305101502,
     "meta": 1662519182947,
     "relativePath": "particle\\atom.plist"
+  },
+  "101baa28-360e-456e-93ae-fc997014db3a": {
+    "asset": 1662536602670,
+    "meta": 1662536605525,
+    "relativePath": "Script\\component\\netCom.ts"
+  },
+  "e9677c47-e1f6-465b-bc1b-a093d2fa343c": {
+    "asset": 1662541118414,
+    "meta": 1662541524519,
+    "relativePath": "Script\\component\\gameData.ts"
+  },
+  "34c10b0d-2279-4e8c-ab87-75bff16b759b": {
+    "asset": 1662541812547,
+    "meta": 1662541839126,
+    "relativePath": "Script\\hall\\service\\GameHttpService.ts"
+  },
+  "3b6be81d-876b-4f11-9275-96b53dd5fc67": {
+    "asset": 1662541944390,
+    "meta": 1662542069699,
+    "relativePath": "Script\\component\\mainLobby.ts"
+  },
+  "3beda0ee-3b9c-48d9-a8b3-054238107d80": {
+    "asset": 1662543364425,
+    "meta": 1662544957112,
+    "relativePath": "Script\\component\\playerInfo.ts"
   }
 }

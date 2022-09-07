@@ -1,10 +1,22 @@
 declare namespace apiData {
+    /**
+     * 接口返回信息体
+     * code: number
+     * msg: string
+     * data
+     */
+    interface request_dada {
+        code: number,
+        msg: string,
+        data: any;
+    }
     /**主页信息
      * 1-玩家信息
      * 2-基础配置信息
      */
     interface home_info {
         user: user_info,
+        draw_card: [],
         config: config_info
     }
     /**

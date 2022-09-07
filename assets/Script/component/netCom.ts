@@ -22,22 +22,6 @@ export default class netCom extends cc.Component {
     start(){
         let token = utils.GetQueryVariable(window.location.href, "token") || netCom.instance.logonData.token;//用户token
         gameData.roomData.setTokenData(token);
-
-        /**请求主页信息
-         * 1-玩家信息
-         * 2-基础配置信息
-         */
-        gameData.httpServer.requestMainHomeInfo(function(data: apiData.home_info){
-            console.log("用户信息以及活动配置信息",data);
-        });
-
-        gameData.httpServer.requestOneDraw(1, function(data: apiData.home_info){
-            console.log("抽一次卡",data);
-        });
-
-        gameData.httpServer.requestOneDraw(10, function(data: apiData.home_info){
-            console.log("抽十次卡",data);
-        });
     }
 
     update (dt:number) {
@@ -45,15 +29,5 @@ export default class netCom extends cc.Component {
     }
     
 }
-
-interface gameData {
-    gameCode: string;//游戏code
-    token: string;//token
-    channelId: number;//进房类型 联盟 俱乐部 好友房
-    ip: string;//游戏ip地址
-    port: number;//端口号
-    desk: number;//房间号
-}
-
 
 
