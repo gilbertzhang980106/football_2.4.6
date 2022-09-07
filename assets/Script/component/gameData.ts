@@ -7,9 +7,6 @@ export namespace gameData {
      */
     export class roomData {
         public static tokenData = "";//
-        public static http = "";//
-        public static apiport = "";//
-        public static requestUrl = "";
         
         /** 跑马灯消息*/
         public static MARQUEE: any[];
@@ -21,18 +18,7 @@ export namespace gameData {
         public static setTokenData(data: string) {
             this.tokenData = data;
         }
-
-        public static setHttp(data: string) {
-            this.http = data;
-        }
-
-        public static setApiport(data: string) {
-            this.apiport = data;
-        }
         
-        public static setRequestUrl() {
-            this.requestUrl = gameData.roomData.http + gameData.roomData.apiport + "/api/v1/Star/";
-        }
     }
 
     /**
@@ -42,26 +28,108 @@ export namespace gameData {
         // public static requestUrl = 
         /**主页信息 用户信息 */
         public static requestMainHomeInfo(callback: Function) {
-            let param = {
-                // token: gameData.roomData.tokenData,
-            }
-            let _url = gameData.roomData.requestUrl + "home";
-            gameData.httpServer.httpGetCallBack(_url, param, function (data: any) {
+            let param = {}
+            gameData.httpServer.httpGet("home", param, function (data: any) {
                 callback && callback(data);
             });
         }
 
-        /**post回调 */
-        public static httpPostCallBack(path, params, callback: Function, fireParam: boolean = false) {
-            let url = gameData.roomData.http + ':'+gameData.roomData.apiport + "/v1/" + path;
+        /**抽一次卡牌或十次卡牌 */
+        public static requestOneDraw(num, callback: Function) {
+            let param = {}
+            let api = num==1?"draw_one" : "draw_ten";
+            gameData.httpServer.httpPost(api, param, function (data: any) {
+                callback && callback(data);
+            });
+        }
+
+        /**合成卡 
+         * id：number --需要合成的卡牌id
+        */
+        public static requestComposite(id, callback: Function) {
+            let param = {
+                id: id
+            }
+            gameData.httpServer.httpPost("composite", param, function (data: any) {
+                callback && callback(data);
+            });
+        }
+
+        /**用户球星卡列表 */
+        public static requestUserCard(num, callback: Function) {
+            let param = {}
+            gameData.httpServer.httpPost("user_card", param, function (data: any) {
+                callback && callback(data);
+            });
+        }
+
+        /**所有球星卡列表 */
+        public static requestCardList(num, callback: Function) {
+            let param = {}
+            gameData.httpServer.httpPost("card_list", param, function (data: any) {
+                callback && callback(data);
+            });
+        }
+
+        /**奖励列表
+         * type number --1-积分；2-卡牌；3-彩金
+         */
+        public static requestCardAward(type, callback: Function) {
+            let param = {
+                award: type
+            }
+            gameData.httpServer.httpPost("card_award", param, function (data: any) {
+                callback && callback(data);
+            });
+        }
+
+        /**领取奖励 
+         * id number --用户合成奖励ID
+        */
+        public static requestReceiveAward(id, callback: Function) {
+            let param = {
+                id: id
+            }
+            gameData.httpServer.httpPost("receive_award", param, function (data: any) {
+                callback && callback(data);
+            });
+        }
+
+        /**卡牌产出 
+         * time string --时间：today=今日；yesterday=昨日；week=近7日；month=近30日
+        */
+        public static requestDrawCard(time, callback: Function) {
+            let param = {
+                time: time
+            }
+            gameData.httpServer.httpPost("draw_card", param, function (data: any) {
+                callback && callback(data);
+            });
+        }
+
+        /**卡牌消耗
+         *  time string --时间：today=今日；yesterday=昨日；week=近7日；month=近30日
+         */
+        public static requestUserAward(time, callback: Function) {
+            let param = {
+                time: time
+            }
+            gameData.httpServer.httpPost("user_award", param, function (data: any) {
+                callback && callback(data);
+            });
+        }
+        
+
+        //短链接POST请求
+        public static httpPost(api, params, callback: Function, fireParam: boolean = false) {
+            let url = window.GetAppConfig()['apiAdrress'] + api;
+
             return new Promise((resolve, reject) => {
                 var xhr = cc.loader.getXMLHttpRequest();
                 xhr.onreadystatechange = function () {
-                    // cc.log("Get: readyState:" + xhr.readyState + " status:" + xhr.status);
                     if (xhr.readyState === 4 && xhr.status == 200) {
                         let respone = xhr.responseText;
                         console.log("respone ", respone);
-
                         if (callback) {
                             if (respone == "" || respone == null) {
                                 if (fireParam == true) callback(params);
@@ -74,24 +142,16 @@ export namespace gameData {
                     } else if (xhr.readyState === 4 && xhr.status == 400) {
                         let respone = JSON.parse(xhr.responseText);
                         console.log("respone err", respone);
-
-
                     } else if (xhr.readyState == 4 && xhr.status == 401) {
-                        //callback(-1);
                         this.checkErro();
                     }
                 }.bind(this);
 
                 xhr.open("POST", url, true);
-
-
-
-                xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
-                xhr.setRequestHeader('Access-Control-Allow-Methods', 'GET, POST');
-                xhr.setRequestHeader('Access-Control-Allow-Headers', 'x-requested-with,content-type');
+                // xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+                // xhr.setRequestHeader('Access-Control-Allow-Methods', 'GET, POST');
+                // xhr.setRequestHeader('Access-Control-Allow-Headers', 'x-requested-with,content-type');
                 xhr.setRequestHeader("Content-Type", "application/json");
-
-
                 xhr.setRequestHeader('Authorization', gameData.roomData.tokenData);
 
                 xhr.timeout = 8000;// 5 seconds for timeout
@@ -103,10 +163,11 @@ export namespace gameData {
             })
         }
 
-        /**get回调 */
-        public static httpGetCallBack(url, param, callback: Function) {
-            let xhr = cc.loader.getXMLHttpRequest();
+        //短链接GET请求
+        public static httpGet(api, param, callback: Function){
+            let url = window.GetAppConfig()['apiAdrress'] + api;
 
+            let xhr = cc.loader.getXMLHttpRequest();
             param = (param) ? param : {};
             var params = [];
             for (var key in param) {
@@ -117,32 +178,25 @@ export namespace gameData {
             // url += "?" + dataStr;
 
             xhr.onreadystatechange = function () {
-                if (xhr.readyState === 4 && xhr.status == 200) {
+                if (xhr.readyState == 4 && (xhr.status >= 200 && xhr.status < 400)) {
                     let respone: any = xhr.responseText;
                     if (respone) respone = JSON.parse(respone);
-                    console.log("respone ", respone instanceof Array, respone);
+                    console.log("response ", respone instanceof Array, respone);
                     callback && callback(respone)
-                } else if (xhr.readyState === 4 && xhr.status == 400) {
+                }else if (xhr.readyState === 4 && xhr.status == 400) {
                     let respone = JSON.parse(xhr.responseText);
                     console.log("respone err", respone);
                 } else {
                 }
             }.bind(this);
+
             xhr.withCredentials = true;
-            xhr.open('GET', url, true);
-
-            xhr.setRequestHeader('Access-Control-Allow-Origin', 'http://localhost:7456');
-            xhr.setRequestHeader('Access-Control-Allow-Headers', 'x-requested-with,content-type,authorization');
+            xhr.open("GET", url, true);
             xhr.setRequestHeader("Content-Type", " text/html");
-            // if (param.token) xhr.setRequestHeader('Authorization', param.token);
             xhr.setRequestHeader('Authorization', gameData.roomData.tokenData);
-
-            // xhr.setRequestHeader('tenantId', param.tenantId);
             xhr.timeout = 8000;// 8 seconds for timeout
-
             xhr.send();
         }
-
     }
 
     /**

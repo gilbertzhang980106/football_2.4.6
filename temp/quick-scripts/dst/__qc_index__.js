@@ -63,7 +63,6 @@ require('./assets/Script/lightUI/utils/Dictionary');
 require('./assets/Script/lightUI/utils/Draw');
 require('./assets/Script/lightUI/utils/Handler');
 require('./assets/Script/lightUI/utils/MyMath');
-require('./assets/config');
 
                     }
                     if (nodeEnv) {

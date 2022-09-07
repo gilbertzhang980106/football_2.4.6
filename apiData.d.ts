@@ -63,6 +63,7 @@ declare namespace apiData {
 
 interface AppConfig {
     wsUrl: string;
+    apiAdrress: string;
 }
 
 function GetAppConfig(): AppConfig;
