@@ -1,15 +1,22 @@
 import { utils } from "./utils"
 import { gameData } from "./gameData";
+import { DznSocket } from "../../Common/src/DznSocket"
 
-const {ccclass, property} = cc._decorator;
+const { ccclass, property } = cc._decorator;
 
 @ccclass
-export default class mainLobby extends cc.Component {   
+export default class mainLobby extends cc.Component {
     @property(cc.Node)
     topBar: cc.Node = null;
 
     @property(cc.Node)
     playerInfo: cc.Node = null;
+
+    @property(cc.Node)
+    show_content: cc.Node = null;
+
+    @property(cc.Node)
+    home_layer: cc.Node = null;
 
     @property(cc.Node)
     layer_reward_card: cc.Node = null;
@@ -28,18 +35,23 @@ export default class mainLobby extends cc.Component {
 
 
     static instance: mainLobby = null;
+    static card_bag_layer: cc.Node = null;
+    static card_exchange_layer: cc.Node = null;
+    static card_record_layer: cc.Node = null;
 
-    onLoad(){
+    onLoad() {
         mainLobby.instance = this;
+
+        DznSocket.on(gameData.messageFlag.CHANGE_SHOW_LAYER, this.layerManager, this);//弹出搓牌界面协议
     }
 
-    start(){
+    start() {
         /**请求主页信息
          * 1-玩家信息
          * 2-基础配置信息
          */
-         gameData.httpServer.requestMainHomeInfo(({code, msg, data}) => {//code: number, msg: string, 
-             if(code === 0){//获取成功
+        gameData.httpServer.requestMainHomeInfo(({ code, msg, data }) => {//code: number, msg: string, 
+            if (code === 0) {//获取成功
                 //存储个人信息及其他数据
                 gameData.userInfo.setUsereInfo(data.user);
                 gameData.userInfo.setDrawCard(data.draw_card);
@@ -47,22 +59,23 @@ export default class mainLobby extends cc.Component {
 
                 //初始化挂在组件
                 mainLobby.instance.initOtherNodeData(data);
-             }else {
-                 console.error("错误信息："+ msg);
-             }
+            } else {
+                console.error("错误信息：" + msg);
+            }
         });
-        
+
         //初始化顶部title模块
 
         //初始化显示layer模块
     }
 
     //初始化其他组件信息
-    initOtherNodeData(data: apiData.home_info){
+    initOtherNodeData(data: apiData.home_info) {
         //初始化个人信息模块
         mainLobby.instance.playerInfo.getComponent('playerInfo').init(data.user);
 
         //初始化中间显示区域内容
+        mainLobby.instance.show_content.active = true;
 
         //初始化活动规则模块
         mainLobby.instance.rule_info.getComponent('ruleComponent').init(data.config);
@@ -72,15 +85,43 @@ export default class mainLobby extends cc.Component {
      * 显示组件显示管理
      * 界面初始化显示主界面
      * 其他界面由点击后加载预制体界面展示
+     * 显示的界面数据刷新在各自组件代码中实现
      */
-    layerManager(){
+    layerManager(showType: string) {
+        console.log("显示当前界面为：" + showType);
+        //先隐藏主界面 再加载需要显示的界面预制体
+        mainLobby.instance.home_layer.active = false;
+        switch (showType) {
+            case gameData.SHOW_LAYER_TYPE.MAIN_HOME:
+                mainLobby.instance.home_layer.active = true;//显示主页
+                mainLobby.instance.show_content.active = false;//隐藏其他面板
+                mainLobby.instance.show_content.removeAllChildren();//移除其他面板，下次显示重新加载以确保数据重新加载
+                break;
+            case gameData.SHOW_LAYER_TYPE.CARD_BAG:
+                cc.instantiate(this.layer_card_history).parent = mainLobby.instance.show_content;
+                //重新设置show_content的高度
+                mainLobby.instance.show_content.height = cc.instantiate(this.layer_card_history).height;
+                break;
+            case gameData.SHOW_LAYER_TYPE.CARD_EXCHANGE:
+                cc.instantiate(this.layer_card_exchange).parent = mainLobby.instance.show_content;
+                //重新设置show_content的高度
+                mainLobby.instance.show_content.height = cc.instantiate(this.layer_card_exchange).height;
+                break;
+            case gameData.SHOW_LAYER_TYPE.CARD_RECORD:
+                cc.instantiate(this.cards_record_layer).parent = mainLobby.instance.show_content;
+                //重新设置show_content的高度
+                mainLobby.instance.show_content.height = cc.instantiate(this.cards_record_layer).height;
+                break;
+        }
         
     }
 
-    update (dt:number) {
-        
+    /** */
+
+    update(dt: number) {
+
     }
-    
+
 }
 
 

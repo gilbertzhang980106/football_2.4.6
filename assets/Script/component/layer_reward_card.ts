@@ -1,5 +1,6 @@
 import { utils } from "./utils"
 import { gameData } from "./gameData";
+import { DznSocket } from "../../Common/src/DznSocket"
 
 const { ccclass, property } = cc._decorator;
 
@@ -53,7 +54,7 @@ export default class layer_reward_card extends cc.Component {
     }
 
     start() {
-
+        
     }
 
     //初始化规则内容
@@ -61,9 +62,30 @@ export default class layer_reward_card extends cc.Component {
         
     }
 
+    //点击抽一次
+    onClickOneDraw(){
+        DznSocket.emit(gameData.messageFlag.CHANGE_SHOW_LAYER, gameData.SHOW_LAYER_TYPE.CARD_RECORD);
+    }
+
+    //点击抽十次
+    onClickTenDraw(){
+        
+    }
+
+    //点击合成大奖
+    onClickHecheng(){
+        
+    }
+
+    //点击打开红包
+    onClickOpenRedBag(){
+        
+    }
+
     update(dt: number) {
 
     }
+    
     
 }
 

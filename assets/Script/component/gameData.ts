@@ -426,4 +426,24 @@ export namespace gameData {
             if(cc.sys.isMobile)window['RnOpera']({cmd:'cancel()'});
         }
     }
+
+    /**
+     * 内部消息收发管理
+     */
+    export class messageFlag {
+        //切换主页面中间区域显示内容 携带参数 "MAIN_HOME"-主页抽奖 "CARD_BAG"-卡包 "CARD_EXCHANGE"-集卡兑换 "CARD_RECORD"-卡牌记录 
+        public static readonly CHANGE_SHOW_LAYER: "CHANGE_SHOW_LAYER";
+        //显示主页提示弹窗界面 
+        public static readonly SHOW_ALERT_LAYER: "SHOW_ALERT_LAYER"
+    }
+
+    /**
+     * 显示界面类型
+     */
+     export enum SHOW_LAYER_TYPE {
+        MAIN_HOME = "MAIN_HOME",//主页抽奖
+        CARD_BAG = "CARD_BAG",//卡包
+        CARD_EXCHANGE = "CARD_EXCHANGE",//集卡兑换
+        CARD_RECORD = "CARD_RECORD",//CARD_RECORD
+    }
 }

@@ -233,7 +233,7 @@
     "asset": {
       "__uuid__": "fd717061-f11d-423b-ae71-811d30829c0e"
     },
-    "fileId": "8f4g32P7ZJsbxV0Ql/niZS",
+    "fileId": "d2bKVrwPVPzI+Ooe7q9vbU",
     "sync": false
   },
   {
@@ -1104,7 +1104,7 @@
       "__id__": 1
     },
     "_enabled": true,
-    "title_img": {
+    "lb_rule": {
       "__id__": 7
     },
     "_id": ""
