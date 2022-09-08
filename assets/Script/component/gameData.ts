@@ -168,9 +168,9 @@ export namespace gameData {
                 }.bind(this);
 
                 xhr.open("POST", url, true);
-                xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
-                xhr.setRequestHeader('Access-Control-Allow-Methods', 'GET, POST');
-                xhr.setRequestHeader('Access-Control-Allow-Headers', 'x-requested-with,content-type');
+                // xhr.setRequestHeader('Access-Control-Allow-Origin', '*');
+                // xhr.setRequestHeader('Access-Control-Allow-Methods', 'GET, POST');
+                // xhr.setRequestHeader('Access-Control-Allow-Headers', 'x-requested-with,content-type');
                 xhr.setRequestHeader("Content-Type", "application/json");
                 xhr.setRequestHeader('Authorization', gameData.roomData.tokenData);
 

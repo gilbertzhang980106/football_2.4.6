@@ -1219,11 +1219,6 @@
     "meta": 1662519182947,
     "relativePath": "particle\\atom.plist"
   },
-  "e9677c47-e1f6-465b-bc1b-a093d2fa343c": {
-    "asset": 1662541118414,
-    "meta": 1662541524519,
-    "relativePath": "Script\\component\\gameData.ts"
-  },
   "34c10b0d-2279-4e8c-ab87-75bff16b759b": {
     "asset": 1662541812547,
     "meta": 1662541839126,
@@ -1243,5 +1238,10 @@
     "asset": 1662608615305,
     "meta": 1662608618416,
     "relativePath": "Script\\component\\netCom.ts"
+  },
+  "e9677c47-e1f6-465b-bc1b-a093d2fa343c": {
+    "asset": 1662614586352,
+    "meta": 1662614597063,
+    "relativePath": "Script\\component\\gameData.ts"
   }
 }
