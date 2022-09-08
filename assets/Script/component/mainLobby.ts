@@ -12,7 +12,19 @@ export default class mainLobby extends cc.Component {
     playerInfo: cc.Node = null;
 
     @property(cc.Node)
-    show_layer: cc.Node = null;
+    layer_reward_card: cc.Node = null;
+
+    @property(cc.Prefab)
+    layer_card_history: cc.Prefab = null;
+
+    @property(cc.Prefab)
+    layer_card_exchange: cc.Prefab = null;
+
+    @property(cc.Prefab)
+    cards_record_layer: cc.Prefab = null;
+
+    @property(cc.Node)
+    rule_info: cc.Node = null;
 
 
     static instance: mainLobby = null;
@@ -49,6 +61,20 @@ export default class mainLobby extends cc.Component {
     initOtherNodeData(data: apiData.home_info){
         //初始化个人信息模块
         mainLobby.instance.playerInfo.getComponent('playerInfo').init(data.user);
+
+        //初始化中间显示区域内容
+
+        //初始化活动规则模块
+        mainLobby.instance.rule_info.getComponent('ruleComponent').init(data.config);
+    }
+
+    /**
+     * 显示组件显示管理
+     * 界面初始化显示主界面
+     * 其他界面由点击后加载预制体界面展示
+     */
+    layerManager(){
+        
     }
 
     update (dt:number) {

@@ -43,10 +43,13 @@
     "_components": [
       {
         "__id__": 30
+      },
+      {
+        "__id__": 31
       }
     ],
     "_prefab": {
-      "__id__": 31
+      "__id__": 32
     },
     "_opacity": 255,
     "_color": {
@@ -228,7 +231,7 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "fd717061-f11d-423b-ae71-811d30829c0e"
     },
     "fileId": "8f4g32P7ZJsbxV0Ql/niZS",
     "sync": false
@@ -366,7 +369,7 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "fd717061-f11d-423b-ae71-811d30829c0e"
     },
     "fileId": "f9h2bhwRFFwrCIjSP5l+an",
     "sync": false
@@ -504,7 +507,7 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "fd717061-f11d-423b-ae71-811d30829c0e"
     },
     "fileId": "16jcYQdK1OkpjgBC34cvO4",
     "sync": false
@@ -642,7 +645,7 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "fd717061-f11d-423b-ae71-811d30829c0e"
     },
     "fileId": "b8DEJkidxP4YxzJ79Pwl/y",
     "sync": false
@@ -780,7 +783,7 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "fd717061-f11d-423b-ae71-811d30829c0e"
     },
     "fileId": "6d7ocEVHpME7XlEzdK17MO",
     "sync": false
@@ -918,7 +921,7 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "fd717061-f11d-423b-ae71-811d30829c0e"
     },
     "fileId": "814chAjLhHjKJe95p1VOVW",
     "sync": false
@@ -1056,7 +1059,7 @@
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "fd717061-f11d-423b-ae71-811d30829c0e"
     },
     "fileId": "61a39drj1DBa9gb+XaPlLw",
     "sync": false
@@ -1094,12 +1097,25 @@
     "_id": ""
   },
   {
+    "__type__": "d8edexoMGRHyq0e0p5WJlRZ",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 1
+    },
+    "_enabled": true,
+    "title_img": {
+      "__id__": 7
+    },
+    "_id": ""
+  },
+  {
     "__type__": "cc.PrefabInfo",
     "root": {
       "__id__": 1
     },
     "asset": {
-      "__id__": 0
+      "__uuid__": "fd717061-f11d-423b-ae71-811d30829c0e"
     },
     "fileId": "",
     "sync": false
