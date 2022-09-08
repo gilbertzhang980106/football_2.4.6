@@ -9,7 +9,7 @@ const {ccclass, property} = cc._decorator;
 export default class netCom extends cc.Component {   
 
     logonData = {
-        token : "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOjI2MzMxLCJhdWQiOiIiLCJleHAiOjE2NjUxOTgwNTYsImlhdCI6MTY2MjYwNjA1NiwiaXNzIjoiIiwianRpIjoiZTA1NDk1MDM1YzRlMDU5YzY5ZTM2YTYxM2NiMWZkMDAiLCJuYmYiOjE2NjI2MDYwNTYsInN1YiI6IiJ9.srFfIj36gt8rOYs0a8j2iciQSD7FvuYaWq6ghTmlYiE",
+        token : "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1aWQiOjEyNDQwMywiYXVkIjoiIiwiZXhwIjoxNjY1MjIwMzA0LCJpYXQiOjE2NjI2MjgzMDQsImlzcyI6IiIsImp0aSI6ImViZDRhOTdlODlhODBlMWVmZGI4ZTI5YWJmZjIyNGQxIiwibmJmIjoxNjYyNjI4MzA0LCJzdWIiOiIifQ.FEHYgXElxdqH74SlIGTWY_HcTKx6vopVrW1RkLCvd0w",
     }
 
     static instance:netCom = null;

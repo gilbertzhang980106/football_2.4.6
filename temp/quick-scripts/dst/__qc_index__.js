@@ -10,6 +10,18 @@
                     };
                     function __define (exports, require, module) {
                         if (!nodeEnv) {__quick_compile_project__.registerModule(__filename, module);}
+require('./assets/Common/src/AudioConfig');
+require('./assets/Common/src/AudioManage');
+require('./assets/Common/src/BasePanel');
+require('./assets/Common/src/Bullt');
+require('./assets/Common/src/DznSocket');
+require('./assets/Common/src/EventManager');
+require('./assets/Common/src/Expand');
+require('./assets/Common/src/GameSocket');
+require('./assets/Common/src/ServerRoom');
+require('./assets/Common/src/StandardButton');
+require('./assets/Common/src/StandardCloseButton');
+require('./assets/Common/src/tool');
 require('./assets/Script/component/gameData');
 require('./assets/Script/component/heartBeat');
 require('./assets/Script/component/layer_reward_card');
@@ -56,18 +68,6 @@ require('./assets/Script/lightUI/utils/Dictionary');
 require('./assets/Script/lightUI/utils/Draw');
 require('./assets/Script/lightUI/utils/Handler');
 require('./assets/Script/lightUI/utils/MyMath');
-require('./assets/common/src/AudioConfig');
-require('./assets/common/src/AudioManage');
-require('./assets/common/src/BasePanel');
-require('./assets/common/src/Bullt');
-require('./assets/common/src/DznSocket');
-require('./assets/common/src/EventManager');
-require('./assets/common/src/Expand');
-require('./assets/common/src/GameSocket');
-require('./assets/common/src/ServerRoom');
-require('./assets/common/src/StandardButton');
-require('./assets/common/src/StandardCloseButton');
-require('./assets/common/src/tool');
 
                     }
                     if (nodeEnv) {

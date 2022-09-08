@@ -91,29 +91,32 @@ export default class mainLobby extends cc.Component {
         console.log("显示当前界面为：" + showType);
         //先隐藏主界面 再加载需要显示的界面预制体
         mainLobby.instance.home_layer.active = false;
-        switch (showType) {
-            case gameData.SHOW_LAYER_TYPE.MAIN_HOME:
-                mainLobby.instance.home_layer.active = true;//显示主页
-                mainLobby.instance.show_content.active = false;//隐藏其他面板
-                mainLobby.instance.show_content.removeAllChildren();//移除其他面板，下次显示重新加载以确保数据重新加载
-                break;
-            case gameData.SHOW_LAYER_TYPE.CARD_BAG:
-                cc.instantiate(this.layer_card_history).parent = mainLobby.instance.show_content;
-                //重新设置show_content的高度
-                mainLobby.instance.show_content.height = cc.instantiate(this.layer_card_history).height;
-                break;
-            case gameData.SHOW_LAYER_TYPE.CARD_EXCHANGE:
-                cc.instantiate(this.layer_card_exchange).parent = mainLobby.instance.show_content;
-                //重新设置show_content的高度
-                mainLobby.instance.show_content.height = cc.instantiate(this.layer_card_exchange).height;
-                break;
-            case gameData.SHOW_LAYER_TYPE.CARD_RECORD:
-                cc.instantiate(this.cards_record_layer).parent = mainLobby.instance.show_content;
-                //重新设置show_content的高度
-                mainLobby.instance.show_content.height = cc.instantiate(this.cards_record_layer).height;
-                break;
+        if(showType.indexOf(gameData.SHOW_LAYER_TYPE.MAIN_HOME) > -1){
+            mainLobby.instance.home_layer.active = true;//显示主页
+            mainLobby.instance.show_content.active = false;//隐藏其他面板
+            mainLobby.instance.show_content.removeAllChildren();//移除其他面板，下次显示重新加载以确保数据重新加载
+        }else{
+            mainLobby.instance.show_content.active = true;//显示父级面板
+            switch (showType) {
+                case gameData.SHOW_LAYER_TYPE.CARD_BAG:
+                    cc.instantiate(this.layer_card_history).parent = mainLobby.instance.show_content;
+                    //重新设置show_content的高度
+                    mainLobby.instance.show_content.height = cc.instantiate(this.layer_card_history).height;
+                    break;
+                case gameData.SHOW_LAYER_TYPE.CARD_EXCHANGE:
+                    mainLobby.instance.show_content.active = true;//显示父级面板
+                    cc.instantiate(this.layer_card_exchange).parent = mainLobby.instance.show_content;
+                    //重新设置show_content的高度
+                    mainLobby.instance.show_content.height = cc.instantiate(this.layer_card_exchange).height;
+                    break;
+                case gameData.SHOW_LAYER_TYPE.CARD_RECORD:
+                    mainLobby.instance.show_content.active = true;//显示父级面板
+                    cc.instantiate(this.cards_record_layer).parent = mainLobby.instance.show_content;
+                    //重新设置show_content的高度
+                    mainLobby.instance.show_content.height = cc.instantiate(this.cards_record_layer).height;
+                    break;
+            }
         }
-        
     }
 
     /** */
