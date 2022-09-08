@@ -1286,8 +1286,8 @@
     },
     "_contentSize": {
       "__type__": "cc.Size",
-      "width": 36,
-      "height": 46
+      "width": 50,
+      "height": 50
     },
     "_anchorPoint": {
       "__type__": "cc.Vec2",
@@ -1368,7 +1368,7 @@
       "__id__": 28
     },
     "_alignFlags": 10,
-    "_left": 20,
+    "_left": 13,
     "_right": 0,
     "_top": 0,
     "_bottom": 0,
@@ -5389,7 +5389,7 @@
         "__id__": 142
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [],
     "_prefab": {
       "__id__": 145
@@ -5792,7 +5792,7 @@
         "__id__": 153
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [],
     "_prefab": {
       "__id__": 156
@@ -6273,7 +6273,7 @@
         "__id__": 166
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [],
     "_prefab": {
       "__id__": 169
@@ -6676,7 +6676,7 @@
         "__id__": 177
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [],
     "_prefab": {
       "__id__": 180
@@ -7157,7 +7157,7 @@
         "__id__": 190
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [],
     "_prefab": {
       "__id__": 193
@@ -7560,7 +7560,7 @@
         "__id__": 201
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [],
     "_prefab": {
       "__id__": 204
@@ -8041,7 +8041,7 @@
         "__id__": 214
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [],
     "_prefab": {
       "__id__": 217
@@ -8444,7 +8444,7 @@
         "__id__": 225
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [],
     "_prefab": {
       "__id__": 228
@@ -8925,7 +8925,7 @@
         "__id__": 238
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [],
     "_prefab": {
       "__id__": 241
@@ -9328,7 +9328,7 @@
         "__id__": 249
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [],
     "_prefab": {
       "__id__": 252
@@ -9806,7 +9806,7 @@
         "__id__": 262
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [],
     "_prefab": {
       "__id__": 265
@@ -11202,7 +11202,7 @@
         "__id__": 294
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 301

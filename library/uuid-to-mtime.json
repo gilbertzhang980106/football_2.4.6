@@ -430,8 +430,8 @@
     "relativePath": "Resource\\Prefabs\\top_bar.prefab"
   },
   "2b9904ed-8d87-44e6-9004-70dd4d1764ec": {
-    "asset": 1662540069962,
-    "meta": 1662540070041,
+    "asset": 1662614324092,
+    "meta": 1662614324200,
     "relativePath": "Resource\\Prefabs\\player_info.prefab"
   },
   "93af72ad-ec5a-47c4-b92d-a3c2b6882a47": {
@@ -440,8 +440,8 @@
     "relativePath": "Resource\\Prefabs\\card_big.prefab"
   },
   "230c98c4-ac2a-49f3-9376-e930370206fb": {
-    "asset": 1662361069453,
-    "meta": 1662361069470,
+    "asset": 1662614411266,
+    "meta": 1662614411332,
     "relativePath": "Resource\\Prefabs\\card_small.prefab"
   },
   "fd717061-f11d-423b-ae71-811d30829c0e": {
@@ -450,8 +450,8 @@
     "relativePath": "Resource\\Prefabs\\rule_info.prefab"
   },
   "a7653576-e355-4711-a2a2-37af1edf486c": {
-    "asset": 1662365292765,
-    "meta": 1662365292779,
+    "asset": 1662614456637,
+    "meta": 1662614456765,
     "relativePath": "Resource\\Prefabs\\layer_reward_card.prefab"
   },
   "fc76818f-8a98-401e-8322-50a54fe74cb6": {
@@ -620,8 +620,8 @@
     "relativePath": "Resource\\Prefabs\\output_list.prefab"
   },
   "2d2f792f-a40c-49bb-a189-ed176a246e49": {
-    "asset": 1662541636185,
-    "meta": 1662541636350,
+    "asset": 1662614512262,
+    "meta": 1662614512409,
     "relativePath": "Scene\\mainLobby.fire"
   },
   "f76f879a-45cf-4f50-a038-954184c0cb1f": {
@@ -1219,11 +1219,6 @@
     "meta": 1662519182947,
     "relativePath": "particle\\atom.plist"
   },
-  "101baa28-360e-456e-93ae-fc997014db3a": {
-    "asset": 1662536602670,
-    "meta": 1662536605525,
-    "relativePath": "Script\\component\\netCom.ts"
-  },
   "e9677c47-e1f6-465b-bc1b-a093d2fa343c": {
     "asset": 1662541118414,
     "meta": 1662541524519,
@@ -1243,5 +1238,10 @@
     "asset": 1662543364425,
     "meta": 1662544957112,
     "relativePath": "Script\\component\\playerInfo.ts"
+  },
+  "101baa28-360e-456e-93ae-fc997014db3a": {
+    "asset": 1662608615305,
+    "meta": 1662608618416,
+    "relativePath": "Script\\component\\netCom.ts"
   }
 }
