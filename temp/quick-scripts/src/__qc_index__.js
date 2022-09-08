@@ -11,6 +11,7 @@ require('./assets/Common/src/ServerRoom');
 require('./assets/Common/src/StandardButton');
 require('./assets/Common/src/StandardCloseButton');
 require('./assets/Common/src/tool');
+require('./assets/Script/component/activityInfo');
 require('./assets/Script/component/gameData');
 require('./assets/Script/component/heartBeat');
 require('./assets/Script/component/layer_reward_card');

@@ -47,6 +47,10 @@ export default class layer_reward_card extends cc.Component {
     // @property(cc.Node)
     // btn_open: cc.Node;
 
+    //活动推荐banner组件
+    @property(cc.Node)
+    activity: cc.Node;
+
     static instance: layer_reward_card = null;
 
     onLoad() {
@@ -57,14 +61,9 @@ export default class layer_reward_card extends cc.Component {
         
     }
 
-    //初始化规则内容
-    init(data: apiData.config_info) {
-        
-    }
-
     //点击抽一次
     onClickOneDraw(){
-        DznSocket.emit(gameData.messageFlag.CHANGE_SHOW_LAYER, gameData.SHOW_LAYER_TYPE.CARD_RECORD);
+        // DznSocket.emit(gameData.messageFlag.CHANGE_SHOW_LAYER, gameData.SHOW_LAYER_TYPE.CARD_RECORD);
     }
 
     //点击抽十次

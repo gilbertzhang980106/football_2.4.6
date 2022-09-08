@@ -5,25 +5,25 @@ import { DznSocket } from "../../Common/src/DznSocket"
 const { ccclass, property } = cc._decorator;
 
 @ccclass
-export default class topBar extends cc.Component {
+export default class activityInfo extends cc.Component {
     @property(cc.Sprite)
-    title_img: cc.Sprite = null;
+    banner_img: cc.Sprite = null;
 
-    @property(cc.SpriteFrame)//title图片数组
-    titleArr: cc.SpriteFrame[] = [];
+    @property(cc.Label)
+    lb_title: cc.Label = null;
 
-    static instance: topBar = null;
+    static instance: activityInfo = null;
 
     onLoad() {
-        topBar.instance = this;
-        DznSocket.on(gameData.messageFlag.CHANGE_SHOW_LAYER, this.updateCurTitle, this);
+        activityInfo.instance = this;
+        // DznSocket.on(gameData.messageFlag.CHANGE_SHOW_LAYER, this.updateCurTitle, this);
     }
 
     start() {
-        this.title_img.spriteFrame = this.titleArr[0];
+        
     }
 
-    //初始化当前title图片
+    //初始化当前活动组件标题, banner图片, 活动时间开始和结束, 抽取分数规则
     init(data: apiData.user_info) {
         
     }
