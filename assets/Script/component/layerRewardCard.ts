@@ -64,13 +64,13 @@ export default class layerRewardCard extends cc.Component {
     onClickOneDraw() {
         gameData.httpServer.requestOneDraw(1, (data) => {
             console.log(data,"抽一次结果");
-            if(data.code === 0){//{"code":0,"msg":"成功","data":[{"id":1,"title":"SSS 梅西","level":"SSS","type":2,"img":"","rate":10000,"status":0,"img_text":"http:\/\/devhdzx.leyuqx5.com","type_text":"中场"}]}
+            if(data.code === 0){//
                 //渲染结果解锁十张或者抽中一张
-                if(data.type == 0){
-                    DznSocket.emit(gameData.messageFlag.SHOW_ALERT_LAYER, gameData.SHOW_MAIN_HOME_ALERT.UNLOCK_NEW_CARD_ONE, data);
-                }else{
-                    DznSocket.emit(gameData.messageFlag.SHOW_ALERT_LAYER, gameData.SHOW_MAIN_HOME_ALERT.DRAW_NEW_CARD_ONE, data);
-                }
+                // if(data.type == 0){
+                    DznSocket.emit(gameData.messageFlag.SHOW_ALERT_LAYER, gameData.SHOW_MAIN_HOME_ALERT.UNLOCK_NEW_CARD_ONE, data.data);
+                // }else{
+                //     DznSocket.emit(gameData.messageFlag.SHOW_ALERT_LAYER, gameData.SHOW_MAIN_HOME_ALERT.DRAW_NEW_CARD_ONE, data.data);
+                // }
             }else {//活动已结束{"code":1003,"msg":"积分不足"}
                 //弹出错误提示
                 DznSocket.emit(gameData.messageFlag.SHOW_ALERT_LAYER, gameData.SHOW_MAIN_HOME_ALERT.ERROR_ALERT, data.msg);
@@ -84,11 +84,11 @@ export default class layerRewardCard extends cc.Component {
             console.log(data,"抽十次结果");
             if(data.code === 0){
                 //渲染结果解锁十张或者抽中十张
-                if(data.type == 0){
-                    DznSocket.emit(gameData.messageFlag.SHOW_ALERT_LAYER, gameData.SHOW_MAIN_HOME_ALERT.UNLOCK_NEW_CARD_TEN, data);
-                }else{
-                    DznSocket.emit(gameData.messageFlag.SHOW_ALERT_LAYER, gameData.SHOW_MAIN_HOME_ALERT.DRAW_NEW_CARD_ONE, data);
-                }
+                // if(data.type == 0){
+                    DznSocket.emit(gameData.messageFlag.SHOW_ALERT_LAYER, gameData.SHOW_MAIN_HOME_ALERT.UNLOCK_NEW_CARD_TEN, data.data);
+                // }else{
+                //     DznSocket.emit(gameData.messageFlag.SHOW_ALERT_LAYER, gameData.SHOW_MAIN_HOME_ALERT.DRAW_NEW_CARD_ONE, data.data);
+                // }
             }else{
                 //弹出错误提示
                 DznSocket.emit(gameData.messageFlag.SHOW_ALERT_LAYER, gameData.SHOW_MAIN_HOME_ALERT.ERROR_ALERT, data.msg);
@@ -102,7 +102,7 @@ export default class layerRewardCard extends cc.Component {
         gameData.httpServer.requestComposite(1, (data) => {
             if(data.code === 0){
                 //渲染结果
-                DznSocket.emit(gameData.messageFlag.SHOW_ALERT_LAYER, gameData.SHOW_MAIN_HOME_ALERT.MYSTERY_JACKPOT, data);
+                DznSocket.emit(gameData.messageFlag.SHOW_ALERT_LAYER, gameData.SHOW_MAIN_HOME_ALERT.MYSTERY_JACKPOT, data.data);
             }else{
                 //弹出错误提示
                 DznSocket.emit(gameData.messageFlag.SHOW_ALERT_LAYER, gameData.SHOW_MAIN_HOME_ALERT.ERROR_ALERT, data.msg);

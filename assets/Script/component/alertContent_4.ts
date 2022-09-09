@@ -24,7 +24,7 @@ export default class alertContent_4 extends cc.Component {
     }
 
     //渲染显示文字内容 抽中/解锁
-    init(data: apiData.card[]) {
+    init(type: number, data: apiData.card[]) {
         let num = 0;
         data.forEach(element => {
             element as apiData.card;
@@ -36,8 +36,8 @@ export default class alertContent_4 extends cc.Component {
         for (let i = 0; i < data.length; i++) {
             alertContent_4.instance.cardArr[i].getComponent("card").init(data[i]);
         }
-
-        alertContent_4.instance.tip.string = "恭喜你，抽中" + num + "张SSS级球星卡";
+        let t = type == 0? "解锁" : "抽中";
+        alertContent_4.instance.tip.string = "恭喜你，" + t + num + "张SSS级球星卡";
     }
 
     update(dt: number) {

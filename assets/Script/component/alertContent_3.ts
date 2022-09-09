@@ -24,11 +24,12 @@ export default class alertContent_3 extends cc.Component {
     }
 
     //渲染显示文字内容 抽中/解锁
-    init(data: apiData.card) {
-        alertContent_3.instance.tip.string = "恭喜你，抽中" + data.level + "级球星卡";
+    init(type: number, data: apiData.card[]) {
+        let t = type == 0? "解锁" : "抽中";
+        alertContent_3.instance.tip.string = "恭喜你，" + t + data[0].level + "级球星卡";
 
         //显示卡片内容
-        alertContent_3.instance.card.getComponent("card").init(data);
+        alertContent_3.instance.card.getComponent("card").init(data[0]);
     }
 
     update(dt: number) {

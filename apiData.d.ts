@@ -67,6 +67,7 @@ declare namespace apiData {
         award: string,//奖励类型；1-积分；2-卡牌；3-彩金；
         draw_card: draw_card_info,
         is_composite: number,//能否合成;0-不能；1-能  
+        card: card//卡片信息
     }
     /**
      * 合成奖励
@@ -84,7 +85,6 @@ declare namespace apiData {
         award: string,//奖励类型；1-积分；2-卡牌；3-彩金；
         draw_card: string,
         is_composite: number,//能否合成;0-不能；1-能  
-        card: card//卡片信息
     }
     /**卡片信息
      * 

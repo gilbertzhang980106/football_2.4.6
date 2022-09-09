@@ -42,24 +42,24 @@ export default class card extends cc.Component {
 
     //渲染卡片信息
     init(data: apiData.card) {
-        utils.spriteSetImgByUrl(card.instance.img_card, data.img_text);
-        card.instance.lb_type.string = data.type;
+        if (data.img.length > 0) utils.spriteSetImgByUrl(card.instance.img_card, data.img_text);
+        card.instance.lb_type.string = data.type_text;
         card.instance.lb_name.string = data.title;
         card.instance.lb_level.string = data.level;
         card.instance.lb_rate.string = data.rate;
         card.cardId = data.id;
     }
 
-    setGuang(isShowGuang: boolean){
+    setGuang(isShowGuang: boolean) {
         card.instance.bg_guang.active = isShowGuang;
     }
 
-    setNum(num: any){
+    setNum(num: any) {
         card.instance.lb_num.node.active = true;
-        card.instance.lb_num.string = num+'';
+        card.instance.lb_num.string = num + '';
     }
 
-    setScale(){
+    setScale() {
         card.instance.node.scaleX = 0.35;
         card.instance.node.scaleY = 0.35;
     }
