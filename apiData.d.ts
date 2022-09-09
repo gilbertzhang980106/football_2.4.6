@@ -45,6 +45,25 @@ declare namespace apiData {
         banner: string,
         rule: string
     }
+     /**
+     * 抽卡一次返回数据信息
+     */
+      interface draw_card_info {
+        id: number,
+        title: string,
+        level: string,
+        type: string,
+        img: string,
+        rate: string,
+        img_text: string,
+        type_text: string,
+    }
+    /**
+     * 抽卡十次返回数据信息
+     */
+     interface draw_card_info {
+        draw_card_info: []
+    }
     /**
     * 跑马灯数据样式
     */

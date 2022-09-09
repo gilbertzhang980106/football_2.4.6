@@ -620,8 +620,8 @@
     "relativePath": "Common\\src\\tool.ts"
   },
   "2d2f792f-a40c-49bb-a189-ed176a246e49": {
-    "asset": 1662691647796,
-    "meta": 1662691647912,
+    "asset": 1662698171414,
+    "meta": 1662698171514,
     "relativePath": "Scene\\mainLobby.fire"
   },
   "d2502914-5173-42ec-9a9e-06a697d42e59": {
@@ -630,8 +630,8 @@
     "relativePath": "Resource\\Prefabs\\btn_gp_2.prefab"
   },
   "0a338bd3-51a2-4fa2-ba88-c6522eb7ca8c": {
-    "asset": 1662618914381,
-    "meta": 1662627900192,
+    "asset": 1662698130803,
+    "meta": 1662698130902,
     "relativePath": "Resource\\Prefabs\\alert_panel.prefab"
   },
   "f0d10d00-a7e1-4241-a243-bb9ff76bac54": {
@@ -1265,24 +1265,14 @@
     "relativePath": "Script\\component\\topBar.ts"
   },
   "a7653576-e355-4711-a2a2-37af1edf486c": {
-    "asset": 1662690782203,
-    "meta": 1662690782324,
+    "asset": 1662693691212,
+    "meta": 1662693691359,
     "relativePath": "Resource\\Prefabs\\layer_reward_card.prefab"
   },
   "07724f35-47e4-4b9a-b9d5-6c65a48991aa": {
     "asset": 1662689240248,
     "meta": 1662689426044,
     "relativePath": "Script\\component\\utils.ts"
-  },
-  "e9677c47-e1f6-465b-bc1b-a093d2fa343c": {
-    "asset": 1662690642138,
-    "meta": 1662690708359,
-    "relativePath": "Script\\component\\gameData.ts"
-  },
-  "35bfb4bf-9b27-44b5-80d5-4e7936259391": {
-    "asset": 1662690704637,
-    "meta": 1662690708492,
-    "relativePath": "Script\\component\\layerRewardCard.ts"
   },
   "34c10b0d-2279-4e8c-ab87-75bff16b759b": {
     "asset": 1662690654381,
@@ -1299,9 +1289,54 @@
     "meta": 1662691551747,
     "relativePath": "Script\\component\\playerInfo.ts"
   },
+  "35bfb4bf-9b27-44b5-80d5-4e7936259391": {
+    "asset": 1662695304224,
+    "meta": 1662695566319,
+    "relativePath": "Script\\component\\layerRewardCard.ts"
+  },
+  "75c047c3-b455-49e8-ac96-8e86ccc86b8d": {
+    "asset": 1662696342876,
+    "meta": 1662696342963,
+    "relativePath": "Resource\\Prefabs\\alert_content_1.prefab"
+  },
+  "a978410d-5579-41b7-8790-1f56a934ce24": {
+    "asset": 1662696355787,
+    "meta": 1662696355896,
+    "relativePath": "Resource\\Prefabs\\alert_content_2.prefab"
+  },
+  "2e41da1c-fe7b-4f26-8048-6cb4dfd1739b": {
+    "asset": 1662696361285,
+    "meta": 1662696361374,
+    "relativePath": "Resource\\Prefabs\\alert_content_3.prefab"
+  },
+  "bae68e76-6de1-420b-8c81-f41c7641b708": {
+    "asset": 1662696368357,
+    "meta": 1662696368497,
+    "relativePath": "Resource\\Prefabs\\alert_content_4.prefab"
+  },
+  "14570279-0f14-4e0f-b618-0305a130ab2e": {
+    "asset": 1662696375030,
+    "meta": 1662696375118,
+    "relativePath": "Resource\\Prefabs\\alert_content_5.prefab"
+  },
+  "4200309c-284e-4e54-994c-b252c8b986af": {
+    "asset": 1662696380298,
+    "meta": 1662696380396,
+    "relativePath": "Resource\\Prefabs\\alert_content_6.prefab"
+  },
+  "0711832f-8a08-47ad-bc75-3aeb041d2625": {
+    "asset": 1662698054059,
+    "meta": 1662698081815,
+    "relativePath": "Script\\component\\alertComponent.ts"
+  },
+  "e9677c47-e1f6-465b-bc1b-a093d2fa343c": {
+    "asset": 1662696645555,
+    "meta": 1662698082126,
+    "relativePath": "Script\\component\\gameData.ts"
+  },
   "3b6be81d-876b-4f11-9275-96b53dd5fc67": {
-    "asset": 1662692440532,
-    "meta": 1662692443767,
+    "asset": 1662696718491,
+    "meta": 1662698082259,
     "relativePath": "Script\\component\\mainLobby.ts"
   }
 }

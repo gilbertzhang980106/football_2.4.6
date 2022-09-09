@@ -62,17 +62,43 @@ export default class layerRewardCard extends cc.Component {
 
     //点击抽一次
     onClickOneDraw() {
-        // DznSocket.emit(gameData.messageFlag.CHANGE_SHOW_LAYER, gameData.SHOW_LAYER_TYPE.CARD_RECORD);
+        gameData.httpServer.requestOneDraw(1, ({ code, msg, data }) => {
+            console.log(data,"抽一次结果");
+            if(code === 0){
+                //渲染结果
+            }else {//活动已结束
+                //弹出错误提示
+                DznSocket.emit(gameData.messageFlag.SHOW_ALERT_LAYER, gameData.SHOW_MAIN_HOME_ALERT.ERROR_ALERT, msg);
+            }
+        });//code: number, msg: string, 
+            
+        
     }
 
     //点击抽十次
     onClickTenDraw() {
-
+        gameData.httpServer.requestOneDraw(10, ({ code, msg, data }) => {
+            console.log(data,"抽十次结果");
+            if(code === 0){
+                //渲染结果
+            }else{
+                //弹出错误提示
+                DznSocket.emit(gameData.messageFlag.SHOW_ALERT_LAYER, gameData.SHOW_MAIN_HOME_ALERT.ERROR_ALERT, msg);
+            }
+        });//code: number, msg: string, 
     }
 
     //点击合成大奖
     onClickHecheng() {
-
+        //参数为合成卡的类型id
+        gameData.httpServer.requestComposite(1, ({ code, msg, data }) => {
+            if(code === 0){
+                //渲染结果
+            }else{
+                //弹出错误提示
+                DznSocket.emit(gameData.messageFlag.SHOW_ALERT_LAYER, gameData.SHOW_MAIN_HOME_ALERT.ERROR_ALERT, msg);
+            }
+        });//code: number, msg: string, 
     }
 
     //点击打开红包

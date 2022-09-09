@@ -434,7 +434,23 @@ export namespace gameData {
         //切换主页面中间区域显示内容 携带参数 "MAIN_HOME"-主页抽奖 "CARD_BAG"-卡包 "CARD_EXCHANGE"-集卡兑换 "CARD_RECORD"-卡牌记录 
         public static readonly CHANGE_SHOW_LAYER: "CHANGE_SHOW_LAYER";
         //显示主页提示弹窗界面 
-        public static readonly SHOW_ALERT_LAYER: "SHOW_ALERT_LAYER"
+        public static readonly SHOW_ALERT_LAYER: "SHOW_ALERT_LAYER";
+        //关闭主页提示弹窗界面 
+        public static readonly HIDE_ALERT_LAYER: "HIDE_ALERT_LAYER";
+    }
+
+    /**
+     * 显示主界面提示弹窗类型
+     */
+     export enum SHOW_MAIN_HOME_ALERT {
+        ERROR_ALERT = "ERROR_ALERT",//错误提示类型
+        NO_SCORE = "NO_SCORE",//积分不够类型
+        UNLOCK_NEW_CARD_ONE = "UNLOCK_NEW_CARD_ONE",//解锁新卡片一张
+        UNLOCK_NEW_CARD_TEN = "UNLOCK_NEW_CARD_TEN",//解锁新卡片十张
+        DRAW_NEW_CARD_ONE = "DRAW_NEW_CARD_ONE",//抽中新卡片一张
+        DRAW_NEW_CARD_TEN = "DRAW_NEW_CARD_TEN",//抽中新卡片十张
+        EXCHANGE_CARD = "EXCHANGE_CARD",//兑换卡片
+        MYSTERY_JACKPOT = "MYSTERY_JACKPOT",//集齐SSS卡兑换神秘大奖
     }
 
     /**

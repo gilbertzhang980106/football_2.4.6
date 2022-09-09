@@ -33,15 +33,13 @@ export default class mainLobby extends cc.Component {
     @property(cc.Node)
     rule_info: cc.Node = null;
 
-
     static instance: mainLobby = null;
     static curLayer: string = "MAIN_HOME";
-    
 
     onLoad() {
         mainLobby.instance = this;
 
-        DznSocket.on(gameData.messageFlag.CHANGE_SHOW_LAYER, this.layerManager, this);//弹出搓牌界面协议
+        DznSocket.on(gameData.messageFlag.CHANGE_SHOW_LAYER, this.layerManager, this);//显示页面切换
     }
 
     start() {
@@ -62,10 +60,6 @@ export default class mainLobby extends cc.Component {
                 console.error("错误信息：" + msg);
             }
         });
-
-        //初始化顶部title模块
-
-        //初始化显示layer模块
     }
 
     //初始化其他组件信息
