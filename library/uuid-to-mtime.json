@@ -640,8 +640,8 @@
     "relativePath": "Resource\\Prefabs\\btn_level_gp.prefab"
   },
   "93af72ad-ec5a-47c4-b92d-a3c2b6882a47": {
-    "asset": 1662356844188,
-    "meta": 1662627900326,
+    "asset": 1662710327032,
+    "meta": 1662710327177,
     "relativePath": "Resource\\Prefabs\\card_big.prefab"
   },
   "7471b66a-6943-49f0-becb-191a0f44ddfc": {
@@ -1285,33 +1285,33 @@
     "relativePath": "Script\\component\\playerInfo.ts"
   },
   "75c047c3-b455-49e8-ac96-8e86ccc86b8d": {
-    "asset": 1662696342876,
-    "meta": 1662696342963,
+    "asset": 1662713272855,
+    "meta": 1662713272955,
     "relativePath": "Resource\\Prefabs\\alert_content_1.prefab"
   },
   "a978410d-5579-41b7-8790-1f56a934ce24": {
-    "asset": 1662696355787,
-    "meta": 1662696355896,
+    "asset": 1662713265823,
+    "meta": 1662713265965,
     "relativePath": "Resource\\Prefabs\\alert_content_2.prefab"
   },
   "2e41da1c-fe7b-4f26-8048-6cb4dfd1739b": {
-    "asset": 1662696361285,
-    "meta": 1662696361374,
+    "asset": 1662711612068,
+    "meta": 1662711612212,
     "relativePath": "Resource\\Prefabs\\alert_content_3.prefab"
   },
   "bae68e76-6de1-420b-8c81-f41c7641b708": {
-    "asset": 1662696368357,
-    "meta": 1662696368497,
+    "asset": 1662713250306,
+    "meta": 1662713250459,
     "relativePath": "Resource\\Prefabs\\alert_content_4.prefab"
   },
   "14570279-0f14-4e0f-b618-0305a130ab2e": {
-    "asset": 1662696375030,
-    "meta": 1662696375118,
+    "asset": 1662714728458,
+    "meta": 1662714728555,
     "relativePath": "Resource\\Prefabs\\alert_content_5.prefab"
   },
   "4200309c-284e-4e54-994c-b252c8b986af": {
-    "asset": 1662696380298,
-    "meta": 1662696380396,
+    "asset": 1662714882775,
+    "meta": 1662714882897,
     "relativePath": "Resource\\Prefabs\\alert_content_6.prefab"
   },
   "35bfb4bf-9b27-44b5-80d5-4e7936259391": {
@@ -1338,5 +1338,40 @@
     "asset": 1662706280975,
     "meta": 1662706285242,
     "relativePath": "Script\\component\\netCom.ts"
+  },
+  "6cd610eb-23d8-420f-9fec-7ed275040018": {
+    "asset": 1662711009721,
+    "meta": 1662711020922,
+    "relativePath": "Common\\src\\StandardCloseAlertButton.ts"
+  },
+  "caa06404-eb4c-4d84-9427-e6edb48106c9": {
+    "asset": 1662711163631,
+    "meta": 1662711165929,
+    "relativePath": "Script\\component\\alertContent_1.ts"
+  },
+  "677415b1-29fc-4baf-bbb1-57579aa852f8": {
+    "asset": 1662713377697,
+    "meta": 1662713380220,
+    "relativePath": "Script\\component\\alertContent_3.ts"
+  },
+  "95a0760b-4cc4-422b-8f83-b6b72fff3d20": {
+    "asset": 1662713374631,
+    "meta": 1662713380342,
+    "relativePath": "Script\\component\\alertContent_4.ts"
+  },
+  "ecff4631-2685-49de-8993-e25ab445856a": {
+    "asset": 1662714667189,
+    "meta": 1662714721854,
+    "relativePath": "Script\\component\\alertContent_5.ts"
+  },
+  "70dac020-9cb9-4285-b585-26f94e223551": {
+    "asset": 1662714675899,
+    "meta": 1662714722021,
+    "relativePath": "Script\\component\\card.ts"
+  },
+  "56304aee-c7d1-4a0c-8085-ed869b344a40": {
+    "asset": 1662714837275,
+    "meta": 1662714851430,
+    "relativePath": "Script\\component\\alertContent_6.ts"
   }
 }
