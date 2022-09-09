@@ -142,7 +142,7 @@ export namespace gameData {
 
         //短链接POST请求
         public static httpPost(api, params, callback: Function, fireParam: boolean = false) {
-            let url = window.GetAppConfig()['apiAdrress'] + api;
+            let url = window.GetAppConfig()['apiAddress'] + api;
 
             return new Promise((resolve, reject) => {
                 var xhr = cc.loader.getXMLHttpRequest();
@@ -185,7 +185,7 @@ export namespace gameData {
 
         //短链接GET请求
         public static httpGet(api, param, callback: Function){
-            let url = window.GetAppConfig()['apiAdrress'] + api;
+            let url = window.GetAppConfig()['apiAddress'] + api;
 
             let xhr = cc.loader.getXMLHttpRequest();
             param = (param) ? param : {};

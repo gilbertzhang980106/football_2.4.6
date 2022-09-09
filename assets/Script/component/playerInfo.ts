@@ -14,6 +14,9 @@ export default class playerInfo extends cc.Component {
     @property(cc.Label)
     myScore: cc.Label = null;
 
+    @property(cc.Label)
+    myCard: cc.Label = null;
+
 
     static instance: playerInfo = null;
 
@@ -28,9 +31,10 @@ export default class playerInfo extends cc.Component {
     //接口回调成功后初始化信息显示
     init(data: apiData.user_info) {
         //初始化个人信息
-        this.nickName.string = data.nickname;
-        this.myScore.string = data.points.toString();
-        this.spriteSetImgByUrl(this.headImg, data.avatar);
+        playerInfo.instance.nickName.string = data.nickname;
+        playerInfo.instance.myScore.string = data.points.toString();
+        playerInfo.instance.myCard.string = data.card.toString();
+        utils.spriteSetImgByUrl(playerInfo.instance.headImg, data.avatar);
     }
 
     public spriteSetImgByUrl(sp: cc.Sprite, url: string, complete: Function = null) {

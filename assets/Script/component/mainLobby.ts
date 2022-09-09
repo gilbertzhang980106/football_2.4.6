@@ -76,6 +76,7 @@ export default class mainLobby extends cc.Component {
 
         //初始化中间显示区域内容
         mainLobby.instance.show_content.active = true;
+        mainLobby.instance.layer_reward_card.getComponent("layerRewardCard").init(data.config);
 
         //初始化活动规则模块
         mainLobby.instance.rule_info.getComponent('ruleComponent').init(data.config);

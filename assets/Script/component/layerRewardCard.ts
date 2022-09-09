@@ -5,7 +5,7 @@ import { DznSocket } from "../../Common/src/DznSocket"
 const { ccclass, property } = cc._decorator;
 
 @ccclass
-export default class layer_reward_card extends cc.Component {
+export default class layerRewardCard extends cc.Component {
     @property(cc.Node)
     toast: cc.Node;
 
@@ -27,13 +27,6 @@ export default class layer_reward_card extends cc.Component {
     //抽奖按钮节点--用于显示隐藏
     @property(cc.Node)
     btn_lottery: cc.Node;
-    //抽一次按钮
-    // @property(cc.Node)
-    // btn_lottery_1: cc.Node;
-
-    //抽十次按钮
-    // @property(cc.Node)
-    // btn_lottery_10: cc.Node;
 
     //合成大奖按钮
     @property(cc.Node)
@@ -43,49 +36,55 @@ export default class layer_reward_card extends cc.Component {
     @property(cc.Node)
     redbag_content: cc.Node;
 
-    //打开红包按钮
-    // @property(cc.Node)
-    // btn_open: cc.Node;
-
-    //活动推荐banner组件
+    //展示卡片组件
     @property(cc.Node)
-    activity: cc.Node;
+    content_show_card: cc.Node;
 
-    static instance: layer_reward_card = null;
+
+    static instance: layerRewardCard = null;
 
     onLoad() {
-        layer_reward_card.instance = this;
+        layerRewardCard.instance = this;
     }
 
     start() {
-        
+
+    }
+
+    //初始化主页面活动banner, 活动时间开始, 结束, 兑换积分值
+    init(data: apiData.config_info) {
+        let imgUrl = window.GetAppConfig()['imageAddress'] + data.banner;
+        utils.spriteSetImgByUrl(layerRewardCard.instance.img_banner, imgUrl);
+        layerRewardCard.instance.lb_title.string = data.title;
+        layerRewardCard.instance.lb_time.string = "活动时间 " + data.show_st_time + "~" + data.show_ed_time;
+        layerRewardCard.instance.lb_rule_score.string = "每 " + data.score + " 积分可抽卡 1 次";
     }
 
     //点击抽一次
-    onClickOneDraw(){
+    onClickOneDraw() {
         // DznSocket.emit(gameData.messageFlag.CHANGE_SHOW_LAYER, gameData.SHOW_LAYER_TYPE.CARD_RECORD);
     }
 
     //点击抽十次
-    onClickTenDraw(){
-        
+    onClickTenDraw() {
+
     }
 
     //点击合成大奖
-    onClickHecheng(){
-        
+    onClickHecheng() {
+
     }
 
     //点击打开红包
-    onClickOpenRedBag(){
-        
+    onClickOpenRedBag() {
+
     }
 
     update(dt: number) {
 
     }
-    
-    
+
+
 }
 
 

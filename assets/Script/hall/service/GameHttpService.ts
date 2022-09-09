@@ -36,7 +36,7 @@ export default class GameHttpService extends com.lightMVC.parrerns.Model impleme
         // let htp = lobbyhttp.split(':')[0];
         // url = htp + "://" + url;
 
-        url = window.GetAppConfig()['apiAdrress'] + url;
+        url = window.GetAppConfig()['apiAddress'] + url;
 
 
         let xhr = cc.loader.getXMLHttpRequest();

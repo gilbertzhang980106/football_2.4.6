@@ -1,5 +1,3 @@
-import { PaymentType } from "../hall/script/hall/model/payment/PaymentType";
-import ShopView from "../hall/script/hall/ui/main/shop/ShopView";
 
 export namespace utils {
 
@@ -245,6 +243,25 @@ export namespace utils {
                 }
             }
         );
+    }
+
+    //加载网络图片
+    export function spriteSetImgByUrl(sp: cc.Sprite, url: string, complete: Function = null) {
+        if (!url) return;
+        let remot: boolean = (url.indexOf("http") == 0)
+        if (remot == true) {
+            cc.loader.load(url + '?aaa=aa.jpg', function (err, texture) {
+                var sprite = new cc.SpriteFrame(texture);
+                sp.spriteFrame = sprite;
+                if (complete) complete();
+            });
+        } else {
+            cc.loader.loadRes(url, function (err, texture) {
+                var sprite = new cc.SpriteFrame(texture);
+                sp.spriteFrame = sprite;
+                if (complete) complete();
+            });
+        }
     }
 
 }
