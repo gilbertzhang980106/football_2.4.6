@@ -1,5 +1,6 @@
 import { utils } from "./utils"
 import { gameData } from "./gameData";
+import { DznSocket } from "../../Common/src/DznSocket"
 
 const { ccclass, property } = cc._decorator;
 
@@ -37,22 +38,24 @@ export default class playerInfo extends cc.Component {
         utils.spriteSetImgByUrl(playerInfo.instance.headImg, data.avatar);
     }
 
-    public spriteSetImgByUrl(sp: cc.Sprite, url: string, complete: Function = null) {
-        if (!url) return;
-        let remot: boolean = (url.indexOf("http") == 0)
-        if (remot == true) {
-            cc.loader.load(url + '?aaa=aa.jpg', function (err, texture) {
-                var sprite = new cc.SpriteFrame(texture);
-                sp.spriteFrame = sprite;
-                if (complete) complete();
-            });
-        } else {
-            cc.loader.loadRes(url, function (err, texture) {
-                var sprite = new cc.SpriteFrame(texture);
-                sp.spriteFrame = sprite;
-                if (complete) complete();
-            });
-        }
+    //切换主界面
+    onClickCardReward(){
+        DznSocket.emit(gameData.messageFlag.CHANGE_SHOW_LAYER, gameData.SHOW_LAYER_TYPE.MAIN_HOME);
+    }
+
+    //切换卡包界面
+    onClickCardBag(){
+        DznSocket.emit(gameData.messageFlag.CHANGE_SHOW_LAYER, gameData.SHOW_LAYER_TYPE.CARD_BAG);
+    }
+
+    //切换兑换界面
+    onClickCardExchange(){
+        DznSocket.emit(gameData.messageFlag.CHANGE_SHOW_LAYER, gameData.SHOW_LAYER_TYPE.CARD_EXCHANGE);
+    }
+
+    //切换卡牌记录界面
+    onClickCardRecord(){
+        DznSocket.emit(gameData.messageFlag.CHANGE_SHOW_LAYER, gameData.SHOW_LAYER_TYPE.CARD_RECORD);
     }
 
     update(dt: number) {

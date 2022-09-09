@@ -620,8 +620,8 @@
     "relativePath": "Common\\src\\tool.ts"
   },
   "2d2f792f-a40c-49bb-a189-ed176a246e49": {
-    "asset": 1662691104421,
-    "meta": 1662691104519,
+    "asset": 1662691647796,
+    "meta": 1662691647912,
     "relativePath": "Scene\\mainLobby.fire"
   },
   "d2502914-5173-42ec-9a9e-06a697d42e59": {
@@ -695,8 +695,8 @@
     "relativePath": "Resource\\Prefabs\\rule_info.prefab"
   },
   "2b9904ed-8d87-44e6-9004-70dd4d1764ec": {
-    "asset": 1662691074366,
-    "meta": 1662691074453,
+    "asset": 1662691607248,
+    "meta": 1662691607335,
     "relativePath": "Resource\\Prefabs\\player_info.prefab"
   },
   "9be175c8-adaa-408d-aa6e-a0703af6150f": {
@@ -1274,11 +1274,6 @@
     "meta": 1662689426044,
     "relativePath": "Script\\component\\utils.ts"
   },
-  "3b6be81d-876b-4f11-9275-96b53dd5fc67": {
-    "asset": 1662689707530,
-    "meta": 1662689749818,
-    "relativePath": "Script\\component\\mainLobby.ts"
-  },
   "e9677c47-e1f6-465b-bc1b-a093d2fa343c": {
     "asset": 1662690642138,
     "meta": 1662690708359,
@@ -1300,8 +1295,13 @@
     "relativePath": "config.js"
   },
   "3beda0ee-3b9c-48d9-a8b3-054238107d80": {
-    "asset": 1662691016753,
-    "meta": 1662691036710,
+    "asset": 1662691549634,
+    "meta": 1662691551747,
     "relativePath": "Script\\component\\playerInfo.ts"
+  },
+  "3b6be81d-876b-4f11-9275-96b53dd5fc67": {
+    "asset": 1662692440532,
+    "meta": 1662692443767,
+    "relativePath": "Script\\component\\mainLobby.ts"
   }
 }

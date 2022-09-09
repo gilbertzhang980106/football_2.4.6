@@ -35,9 +35,8 @@ export default class mainLobby extends cc.Component {
 
 
     static instance: mainLobby = null;
-    static card_bag_layer: cc.Node = null;
-    static card_exchange_layer: cc.Node = null;
-    static card_record_layer: cc.Node = null;
+    static curLayer: string = "MAIN_HOME";
+    
 
     onLoad() {
         mainLobby.instance = this;
@@ -89,13 +88,15 @@ export default class mainLobby extends cc.Component {
      * 显示的界面数据刷新在各自组件代码中实现
      */
     layerManager(showType: string) {
+        if(mainLobby.curLayer.indexOf(showType) > -1)return;
+        mainLobby.curLayer = showType;
         console.log("显示当前界面为：" + showType);
         //先隐藏主界面 再加载需要显示的界面预制体
         mainLobby.instance.home_layer.active = false;
+        mainLobby.instance.show_content.removeAllChildren();//移除其他面板，下次显示重新加载以确保数据重新加载
+        mainLobby.instance.show_content.active = false;//隐藏其他面板
         if(showType.indexOf(gameData.SHOW_LAYER_TYPE.MAIN_HOME) > -1){
             mainLobby.instance.home_layer.active = true;//显示主页
-            mainLobby.instance.show_content.active = false;//隐藏其他面板
-            mainLobby.instance.show_content.removeAllChildren();//移除其他面板，下次显示重新加载以确保数据重新加载
         }else{
             mainLobby.instance.show_content.active = true;//显示父级面板
             switch (showType) {
