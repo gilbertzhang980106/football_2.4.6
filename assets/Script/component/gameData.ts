@@ -149,6 +149,7 @@ export namespace gameData {
                 xhr.onreadystatechange = function () {
                     if (xhr.readyState === 4 && xhr.status == 200) {
                         let respone = xhr.responseText;
+                        if (respone) respone = JSON.parse(respone);
                         console.log("respone ", respone);
                         if (callback) {
                             if (respone == "" || respone == null) {
@@ -432,11 +433,13 @@ export namespace gameData {
      */
     export class messageFlag {
         //切换主页面中间区域显示内容 携带参数 "MAIN_HOME"-主页抽奖 "CARD_BAG"-卡包 "CARD_EXCHANGE"-集卡兑换 "CARD_RECORD"-卡牌记录 
-        public static readonly CHANGE_SHOW_LAYER: "CHANGE_SHOW_LAYER";
+        public static readonly CHANGE_SHOW_LAYER = "CHANGE_SHOW_LAYER";
         //显示主页提示弹窗界面 
-        public static readonly SHOW_ALERT_LAYER: "SHOW_ALERT_LAYER";
+        public static readonly SHOW_ALERT_LAYER = "SHOW_ALERT_LAYER";
         //关闭主页提示弹窗界面 
-        public static readonly HIDE_ALERT_LAYER: "HIDE_ALERT_LAYER";
+        public static readonly HIDE_ALERT_LAYER = "HIDE_ALERT_LAYER";
+        //通知
+        public static readonly TELL_INFO = "TELL_INFO";
     }
 
     /**

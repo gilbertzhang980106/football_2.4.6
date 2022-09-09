@@ -22,7 +22,7 @@ declare namespace apiData {
     /**
      * 用户信息
      */
-     interface user_info {
+    interface user_info {
         uid: number,
         username: string,
         nickname: string,
@@ -34,7 +34,7 @@ declare namespace apiData {
     /**
      * 配置信息
      */
-     interface config_info {
+    interface config_info {
         id: number,
         title: string,
         start_time: string,
@@ -45,10 +45,10 @@ declare namespace apiData {
         banner: string,
         rule: string
     }
-     /**
-     * 抽卡一次返回数据信息
-     */
-      interface draw_card_info {
+    /**
+    * 抽卡一次返回数据信息
+    */
+    interface draw_card_info {
         id: number,
         title: string,
         level: string,
@@ -61,8 +61,30 @@ declare namespace apiData {
     /**
      * 抽卡十次返回数据信息
      */
-     interface draw_card_info {
+    interface draw_card_ten_info {
         draw_card_info: []
+    }
+    /**
+     * 合成大奖返回数据信息
+     */
+    interface hecheng_card_info {
+        draw_card:draw_card
+    }
+    /**
+     * 合成卡信息
+     */
+    interface draw_card {
+        id: number,
+        uid: string,
+        username: string,
+        aid: string,
+        cid: string,
+        num: string,
+        done_time: string,
+        award: string,
+        draw_card: string,
+        is_composite: number,
+        card: string,
     }
     /**
     * 跑马灯数据样式

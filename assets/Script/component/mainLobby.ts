@@ -33,6 +33,9 @@ export default class mainLobby extends cc.Component {
     @property(cc.Node)
     rule_info: cc.Node = null;
 
+    @property(cc.Node)
+    alert_panel: cc.Node = null;
+
     static instance: mainLobby = null;
     static curLayer: string = "MAIN_HOME";
 
@@ -40,6 +43,8 @@ export default class mainLobby extends cc.Component {
         mainLobby.instance = this;
 
         DznSocket.on(gameData.messageFlag.CHANGE_SHOW_LAYER, this.layerManager, this);//显示页面切换
+        DznSocket.on(gameData.messageFlag.SHOW_ALERT_LAYER, this.onShowAlert, this);//显示提示层界面啊
+        DznSocket.on(gameData.messageFlag.HIDE_ALERT_LAYER, this.onHideAlertPanel, this);//隐藏提示层界面
     }
 
     start() {
@@ -115,8 +120,15 @@ export default class mainLobby extends cc.Component {
         }
     }
 
-    /** */
+    onShowAlert(){
+        mainLobby.instance.alert_panel.active = true;
+    }
 
+    onHideAlertPanel(){
+        mainLobby.instance.alert_panel.active = false;
+    }
+
+    /** */
     update(dt: number) {
 
     }

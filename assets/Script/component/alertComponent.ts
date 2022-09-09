@@ -29,16 +29,18 @@ export default class alertComponent extends cc.Component {
 
     onLoad() {
         alertComponent.instance = this;
+        alertComponent.instance.node.active = false;
         DznSocket.on(gameData.messageFlag.SHOW_ALERT_LAYER, this.onShowPops, this);
         DznSocket.on(gameData.messageFlag.HIDE_ALERT_LAYER, this.onCloseAlertPanel, this);//关闭弹窗
     }
 
     start() {
-        alertComponent.instance.node.active = false;
+        
     }
 
     onShowPops(type: string, data: any) {
-        alertComponent.instance.node.removeAllChildren();
+        if(alertComponent.instance.node.childrenCount>0)alertComponent.instance.node.removeAllChildren();
+        alertComponent.instance.node.active = true;
         switch (type) {
             case gameData.SHOW_MAIN_HOME_ALERT.ERROR_ALERT:
                 this.onShowErrorPop(data);
@@ -71,6 +73,7 @@ export default class alertComponent extends cc.Component {
     onShowErrorPop(data: any) {
         let showPopNode = cc.instantiate(this.alert_content_1);
         showPopNode.parent = alertComponent.instance.node;
+        showPopNode.active = true;
         showPopNode.getComponent("").init(data);
     }
 
@@ -78,12 +81,14 @@ export default class alertComponent extends cc.Component {
     onShowNoScorePop(data: any) {
         let showPopNode = cc.instantiate(this.alert_content_1);
         showPopNode.parent = alertComponent.instance.node;
+        showPopNode.active = true;
         showPopNode.getComponent("").init(data);
     }
 
     //显示解锁/抽中新卡片一张的弹窗 type 0-解锁 1-抽中
     onShowUnlockDrawOnePop(type: number, data: any) {
         let showPopNode = cc.instantiate(this.alert_content_1);
+        showPopNode.active = true;
         showPopNode.parent = alertComponent.instance.node;
         showPopNode.getComponent("").init(data);
     }
@@ -92,6 +97,7 @@ export default class alertComponent extends cc.Component {
     onShowUnlockDrawTenPop(type: number, data: any) {
         let showPopNode = cc.instantiate(this.alert_content_1);
         showPopNode.parent = alertComponent.instance.node;
+        showPopNode.active = true;
         showPopNode.getComponent("").init(data);
     }
 
@@ -99,6 +105,7 @@ export default class alertComponent extends cc.Component {
     onShowExchangeCardPop(data: any) {
         let showPopNode = cc.instantiate(this.alert_content_1);
         showPopNode.parent = alertComponent.instance.node;
+        showPopNode.active = true;
         showPopNode.getComponent("").init(data);
     }
 
@@ -106,13 +113,14 @@ export default class alertComponent extends cc.Component {
     onShowMysteryJackpotPop(data: any) {
         let showPopNode = cc.instantiate(this.alert_content_1);
         showPopNode.parent = alertComponent.instance.node;
+        showPopNode.active = true;
         showPopNode.getComponent("").init(data);
     }
 
     //关闭提示弹窗
     onCloseAlertPanel() {
-        alertComponent.instance.node.removeAllChildren();
         alertComponent.instance.node.active = false;
+        alertComponent.instance.node.removeAllChildren();
     }
 
     update(dt: number) {

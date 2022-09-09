@@ -620,8 +620,8 @@
     "relativePath": "Common\\src\\tool.ts"
   },
   "2d2f792f-a40c-49bb-a189-ed176a246e49": {
-    "asset": 1662698171414,
-    "meta": 1662698171514,
+    "asset": 1662703553259,
+    "meta": 1662703553362,
     "relativePath": "Scene\\mainLobby.fire"
   },
   "d2502914-5173-42ec-9a9e-06a697d42e59": {
@@ -1249,11 +1249,6 @@
     "meta": 1662627923431,
     "relativePath": "resources\\audio\\hb_lose.mp3"
   },
-  "101baa28-360e-456e-93ae-fc997014db3a": {
-    "asset": 1662628417596,
-    "meta": 1662628759992,
-    "relativePath": "Script\\component\\netCom.ts"
-  },
   "b81c7f53-7451-4ba6-b3be-51a2c7135539": {
     "asset": 1662346274818,
     "meta": 1662687144165,
@@ -1289,11 +1284,6 @@
     "meta": 1662691551747,
     "relativePath": "Script\\component\\playerInfo.ts"
   },
-  "35bfb4bf-9b27-44b5-80d5-4e7936259391": {
-    "asset": 1662695304224,
-    "meta": 1662695566319,
-    "relativePath": "Script\\component\\layerRewardCard.ts"
-  },
   "75c047c3-b455-49e8-ac96-8e86ccc86b8d": {
     "asset": 1662696342876,
     "meta": 1662696342963,
@@ -1324,19 +1314,29 @@
     "meta": 1662696380396,
     "relativePath": "Resource\\Prefabs\\alert_content_6.prefab"
   },
+  "101baa28-360e-456e-93ae-fc997014db3a": {
+    "asset": 1662702054140,
+    "meta": 1662702057751,
+    "relativePath": "Script\\component\\netCom.ts"
+  },
+  "35bfb4bf-9b27-44b5-80d5-4e7936259391": {
+    "asset": 1662702959904,
+    "meta": 1662702969504,
+    "relativePath": "Script\\component\\layerRewardCard.ts"
+  },
   "0711832f-8a08-47ad-bc75-3aeb041d2625": {
-    "asset": 1662698054059,
-    "meta": 1662698081815,
+    "asset": 1662703746725,
+    "meta": 1662703773314,
     "relativePath": "Script\\component\\alertComponent.ts"
   },
-  "e9677c47-e1f6-465b-bc1b-a093d2fa343c": {
-    "asset": 1662696645555,
-    "meta": 1662698082126,
-    "relativePath": "Script\\component\\gameData.ts"
-  },
   "3b6be81d-876b-4f11-9275-96b53dd5fc67": {
-    "asset": 1662696718491,
-    "meta": 1662698082259,
+    "asset": 1662704755809,
+    "meta": 1662704786842,
     "relativePath": "Script\\component\\mainLobby.ts"
+  },
+  "e9677c47-e1f6-465b-bc1b-a093d2fa343c": {
+    "asset": 1662704868709,
+    "meta": 1662704873508,
+    "relativePath": "Script\\component\\gameData.ts"
   }
 }
