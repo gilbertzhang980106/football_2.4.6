@@ -30,6 +30,7 @@ require('./assets/Script/component/alertContent_4');
 require('./assets/Script/component/alertContent_5');
 require('./assets/Script/component/alertContent_6');
 require('./assets/Script/component/card');
+require('./assets/Script/component/cardsRecordLayer');
 require('./assets/Script/component/gameData');
 require('./assets/Script/component/heartBeat');
 require('./assets/Script/component/layerRewardCard');
