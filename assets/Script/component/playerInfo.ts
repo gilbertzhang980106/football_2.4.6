@@ -18,6 +18,12 @@ export default class playerInfo extends cc.Component {
     @property(cc.Label)
     myCard: cc.Label = null;
 
+    @property(cc.Toggle)
+    toggle_menu: cc.Toggle = null;
+
+    @property(cc.Node)
+    menu_group: cc.Node = null;
+
 
     static instance: playerInfo = null;
 
@@ -34,8 +40,13 @@ export default class playerInfo extends cc.Component {
         //初始化个人信息
         playerInfo.instance.nickName.string = data.nickname;
         playerInfo.instance.myScore.string = data.points.toString();
-        playerInfo.instance.myCard.string = data.card.toString();
+        // playerInfo.instance.myCard.string = data.card.toString();
         utils.spriteSetImgByUrl(playerInfo.instance.headImg, data.avatar);
+        playerInfo.instance.menu_group.active = playerInfo.instance.toggle_menu.isChecked;
+    }
+
+    onShowMenuGroup(){
+        playerInfo.instance.menu_group.active = playerInfo.instance.toggle_menu.isChecked;
     }
 
     //切换主界面

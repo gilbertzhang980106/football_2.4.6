@@ -545,8 +545,8 @@
     "relativePath": "resources\\audio"
   },
   "1b0263ff-db86-4276-970b-78d4edfa5c51": {
-    "asset": 1662717662595,
-    "meta": 1662718093356,
+    "asset": 1662752307537,
+    "meta": 1662778717428,
     "relativePath": "Script\\component"
   },
   "9396c2ee-38da-4088-865f-7d98ad621f68": {
@@ -615,8 +615,8 @@
     "relativePath": "Common\\src\\tool.ts"
   },
   "2d2f792f-a40c-49bb-a189-ed176a246e49": {
-    "asset": 1662755979699,
-    "meta": 1662755979711,
+    "asset": 1662844361897,
+    "meta": 1662844361910,
     "relativePath": "Scene\\mainLobby.fire"
   },
   "d2502914-5173-42ec-9a9e-06a697d42e59": {
@@ -690,8 +690,8 @@
     "relativePath": "Resource\\Prefabs\\rule_info.prefab"
   },
   "2b9904ed-8d87-44e6-9004-70dd4d1764ec": {
-    "asset": 1662717662528,
-    "meta": 1662718093931,
+    "asset": 1662843499445,
+    "meta": 1662843499457,
     "relativePath": "Resource\\Prefabs\\player_info.prefab"
   },
   "9be175c8-adaa-408d-aa6e-a0703af6150f": {
@@ -936,7 +936,7 @@
   },
   "0f165d3e-a56e-4206-95fd-75418850b817": {
     "asset": 1662526761047,
-    "meta": 1662718094211,
+    "meta": 1662832500723,
     "relativePath": "Resource\\Texture\\title_btn_bg.png"
   },
   "0732b6c7-4405-49c6-9d87-d3ea586a7cf6": {
@@ -1269,11 +1269,6 @@
     "meta": 1662718093353,
     "relativePath": "config.js"
   },
-  "3beda0ee-3b9c-48d9-a8b3-054238107d80": {
-    "asset": 1662717662594,
-    "meta": 1662718095659,
-    "relativePath": "Script\\component\\playerInfo.ts"
-  },
   "75c047c3-b455-49e8-ac96-8e86ccc86b8d": {
     "asset": 1662717662493,
     "meta": 1662718093816,
@@ -1373,5 +1368,80 @@
     "asset": 1662754841254,
     "meta": 1662755055809,
     "relativePath": "Script\\component\\cardsRecordLayer.ts"
+  },
+  "622cc77a-7cbf-401b-9fa6-3adaadb63c5b": {
+    "asset": 1662833962000,
+    "meta": 1662834200860,
+    "relativePath": "Resource\\Texture\\icon_score1.png"
+  },
+  "405d4618-64cf-4562-9bda-4ce38c1dfb30": {
+    "asset": 1662834050392,
+    "meta": 1662834200862,
+    "relativePath": "Resource\\Texture\\icon_score2.png"
+  },
+  "d05af6fb-6f0b-479f-8753-2b1c489432fc": {
+    "asset": 1662830242000,
+    "meta": 1662835984355,
+    "relativePath": "Resource\\Texture\\btn_info_menu1.png"
+  },
+  "3fbc2c7f-8fd6-4bc5-a8c1-91f3e86fb82b": {
+    "asset": 1662829414746,
+    "meta": 1662835984358,
+    "relativePath": "Resource\\Texture\\btn_info_menu2.png"
+  },
+  "c593d4e0-5936-4dbf-99dc-50424754ebdd": {
+    "asset": 1662830242000,
+    "meta": 1662835984360,
+    "relativePath": "Resource\\Texture\\icon_info_menu.png"
+  },
+  "d9e7cfc0-4a9a-4cc8-bb9a-912a329ca0e4": {
+    "asset": 1662829427458,
+    "meta": 1662836279316,
+    "relativePath": "Resource\\Texture\\info_menuBg.png"
+  },
+  "425f4145-174c-4781-9856-dd11755c7216": {
+    "asset": 1662836469381,
+    "meta": 1662836687561,
+    "relativePath": "Resource\\Texture\\icon_sound.png"
+  },
+  "a9ffce0c-d199-44e3-bbcf-55d0c22c38ca": {
+    "asset": 1662836503286,
+    "meta": 1662836687565,
+    "relativePath": "Resource\\Texture\\btn_rule.png"
+  },
+  "93f20905-97a6-464f-b036-d93e36ed38c7": {
+    "asset": 1662829435281,
+    "meta": 1662836687567,
+    "relativePath": "Resource\\Texture\\btn_sound.png"
+  },
+  "8bca7031-b703-4303-81e7-b78b1af1a5a7": {
+    "asset": 1662836488753,
+    "meta": 1662836687569,
+    "relativePath": "Resource\\Texture\\btn_quit.png"
+  },
+  "3beda0ee-3b9c-48d9-a8b3-054238107d80": {
+    "asset": 1662837472414,
+    "meta": 1662837474076,
+    "relativePath": "Script\\component\\playerInfo.ts"
+  },
+  "0fdcded1-3711-4a19-be01-781aaf4e0772": {
+    "asset": 1662842756291,
+    "meta": 1662842935955,
+    "relativePath": "Resource\\Texture\\bg_bottom_cardsList.png"
+  },
+  "4621c29b-b14d-48d3-8337-805843012846": {
+    "asset": 1662842719824,
+    "meta": 1662842935958,
+    "relativePath": "Resource\\Texture\\bg_bottom_exchange.png"
+  },
+  "0c67acee-3584-4488-a616-4871a3cbe95a": {
+    "asset": 1662831064340,
+    "meta": 1662842935960,
+    "relativePath": "Resource\\Texture\\bg_bottom_bar.png"
+  },
+  "f8139d43-6e34-4976-a8b5-a1cb9d85df2d": {
+    "asset": 1662842741461,
+    "meta": 1662842935962,
+    "relativePath": "Resource\\Texture\\bg_bottom_cardBag.png"
   }
 }

@@ -13,13 +13,13 @@
         "type": "dock-h",
         "children": [
           {
-            "width": 302.1368103027344,
-            "height": 838.9528198242188,
+            "width": 301.96697998046875,
+            "height": 841.6839599609375,
             "type": "dock-v",
             "children": [
               {
-                "width": 302.1368103027344,
-                "height": 486.5518798828125,
+                "width": 301.96697998046875,
+                "height": 488.3915100097656,
                 "type": "panel",
                 "active": 0,
                 "children": [
@@ -27,8 +27,8 @@
                 ]
               },
               {
-                "width": 302.1368103027344,
-                "height": 349.3868103027344,
+                "width": 301.96697998046875,
+                "height": 350.2924499511719,
                 "type": "panel",
                 "active": 0,
                 "children": [
@@ -38,18 +38,18 @@
             ]
           },
           {
-            "width": 1069.4716796875,
-            "height": 838.9528198242188,
+            "width": 1069.853759765625,
+            "height": 841.6839599609375,
             "type": "dock-v",
             "children": [
               {
-                "width": 1069.4716796875,
-                "height": 569.9434204101562,
+                "width": 1069.853759765625,
+                "height": 568.7830200195312,
                 "type": "dock-h",
                 "children": [
                   {
-                    "width": 802.3443603515625,
-                    "height": 569.9434204101562,
+                    "width": 800.8867797851562,
+                    "height": 568.7830200195312,
                     "type": "panel",
                     "active": 0,
                     "children": [
@@ -57,8 +57,8 @@
                     ]
                   },
                   {
-                    "width": 264.11322021484375,
-                    "height": 569.9434204101562,
+                    "width": 265.96697998046875,
+                    "height": 568.7830200195312,
                     "type": "panel",
                     "active": 0,
                     "children": [
@@ -68,8 +68,8 @@
                 ]
               },
               {
-                "width": 1069.4716796875,
-                "height": 265.99530029296875,
+                "width": 1069.853759765625,
+                "height": 269.90093994140625,
                 "type": "panel",
                 "active": 0,
                 "children": [
@@ -81,8 +81,8 @@
             ]
           },
           {
-            "width": 362.16510009765625,
-            "height": 838.9528198242188,
+            "width": 361.9528503417969,
+            "height": 841.6839599609375,
             "type": "panel",
             "active": 0,
             "children": [
@@ -103,15 +103,14 @@
         "inspector",
         "cocos-services"
       ]
-    },
-    " common-asset-worker-worker": {}
+    }
   },
   "panels": {
     "preferences": {
-      "x": 2287,
-      "y": 275,
-      "width": 600,
-      "height": 565
+      "x": 2284,
+      "y": 272,
+      "width": 604,
+      "height": 569
     },
     "builder": {
       "x": 2741,
@@ -120,10 +119,16 @@
       "height": 739
     },
     "project-settings": {
-      "x": 2353,
-      "y": 327,
-      "width": 600,
-      "height": 565
+      "x": 2352,
+      "y": 309,
+      "width": 612,
+      "height": 589
+    },
+    "sprite-editor": {
+      "x": 607,
+      "y": 196,
+      "width": 528,
+      "height": 549
     }
   },
   "panelLabelWidth": {}
