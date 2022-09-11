@@ -535,8 +535,8 @@
     "relativePath": "Resource\\Prefabs"
   },
   "c1b7624b-f02d-4e90-bad5-c7012902aa53": {
-    "asset": 1662717642928,
-    "meta": 1662718093349,
+    "asset": 1662842935923,
+    "meta": 1662871806281,
     "relativePath": "Resource\\Texture"
   },
   "62faf53f-0b90-455c-b52e-f552e27a6035": {
@@ -615,8 +615,8 @@
     "relativePath": "Common\\src\\tool.ts"
   },
   "2d2f792f-a40c-49bb-a189-ed176a246e49": {
-    "asset": 1662844361897,
-    "meta": 1662844361910,
+    "asset": 1662933382979,
+    "meta": 1662933382991,
     "relativePath": "Scene\\mainLobby.fire"
   },
   "d2502914-5173-42ec-9a9e-06a697d42e59": {
@@ -660,8 +660,8 @@
     "relativePath": "Resource\\Prefabs\\card_small.prefab"
   },
   "95c1752a-ffae-44a3-b876-963da5a55e78": {
-    "asset": 1662755918554,
-    "meta": 1662755918564,
+    "asset": 1662931877816,
+    "meta": 1662931877824,
     "relativePath": "Resource\\Prefabs\\cards_record_layer.prefab"
   },
   "b3fe682c-f9db-4f8a-a075-a76015606f40": {
@@ -685,13 +685,13 @@
     "relativePath": "Resource\\Prefabs\\my_card_item.prefab"
   },
   "fd717061-f11d-423b-ae71-811d30829c0e": {
-    "asset": 1662629394238,
-    "meta": 1662718093939,
+    "asset": 1662932104362,
+    "meta": 1662932104377,
     "relativePath": "Resource\\Prefabs\\rule_info.prefab"
   },
   "2b9904ed-8d87-44e6-9004-70dd4d1764ec": {
-    "asset": 1662843499445,
-    "meta": 1662843499457,
+    "asset": 1662932430999,
+    "meta": 1662932431007,
     "relativePath": "Resource\\Prefabs\\player_info.prefab"
   },
   "9be175c8-adaa-408d-aa6e-a0703af6150f": {
@@ -953,11 +953,6 @@
     "asset": 1662526761047,
     "meta": 1662718094171,
     "relativePath": "Resource\\Texture\\right_arow.png"
-  },
-  "d8edec68-3064-47ca-ad1e-d29e56265459": {
-    "asset": 1662620550072,
-    "meta": 1662718095706,
-    "relativePath": "Script\\component\\ruleComponent.ts"
   },
   "e1cb904f-6085-450f-833f-8281829a8c5e": {
     "asset": 1662526781566,
@@ -1299,16 +1294,6 @@
     "meta": 1662718093851,
     "relativePath": "Resource\\Prefabs\\alert_content_6.prefab"
   },
-  "e9677c47-e1f6-465b-bc1b-a093d2fa343c": {
-    "asset": 1662717662574,
-    "meta": 1662718095523,
-    "relativePath": "Script\\component\\gameData.ts"
-  },
-  "3b6be81d-876b-4f11-9275-96b53dd5fc67": {
-    "asset": 1662717662577,
-    "meta": 1662718095625,
-    "relativePath": "Script\\component\\mainLobby.ts"
-  },
   "101baa28-360e-456e-93ae-fc997014db3a": {
     "asset": 1662717662579,
     "meta": 1662718095642,
@@ -1364,11 +1349,6 @@
     "meta": 1662749526255,
     "relativePath": "Common\\src\\StandardCloseButton.ts"
   },
-  "144ba8bb-2381-4821-8d0c-8062b137524e": {
-    "asset": 1662754841254,
-    "meta": 1662755055809,
-    "relativePath": "Script\\component\\cardsRecordLayer.ts"
-  },
   "622cc77a-7cbf-401b-9fa6-3adaadb63c5b": {
     "asset": 1662833962000,
     "meta": 1662834200860,
@@ -1419,11 +1399,6 @@
     "meta": 1662836687569,
     "relativePath": "Resource\\Texture\\btn_quit.png"
   },
-  "3beda0ee-3b9c-48d9-a8b3-054238107d80": {
-    "asset": 1662837472414,
-    "meta": 1662837474076,
-    "relativePath": "Script\\component\\playerInfo.ts"
-  },
   "0fdcded1-3711-4a19-be01-781aaf4e0772": {
     "asset": 1662842756291,
     "meta": 1662842935955,
@@ -1443,5 +1418,70 @@
     "asset": 1662842741461,
     "meta": 1662842935962,
     "relativePath": "Resource\\Texture\\bg_bottom_cardBag.png"
+  },
+  "5b5eb026-1009-427b-af62-47dbc74c9f3a": {
+    "asset": 1662928386906,
+    "meta": 1662928625355,
+    "relativePath": "Resource\\Texture\\panel_rule.png"
+  },
+  "a7fe2b6e-8c1e-4ec1-893f-094a0f6dab69": {
+    "asset": 1662928369819,
+    "meta": 1662928625358,
+    "relativePath": "Resource\\Texture\\panel_closeBtn.png"
+  },
+  "c1b369bc-8330-45b1-a0a1-7cd3059df543": {
+    "asset": 1662928365566,
+    "meta": 1662928625361,
+    "relativePath": "Resource\\Texture\\panel_cardRecord.png"
+  },
+  "6d03ba96-10f7-4b43-a887-bb25bf106df8": {
+    "asset": 1662928361227,
+    "meta": 1662928625363,
+    "relativePath": "Resource\\Texture\\panelBg.png"
+  },
+  "b417d7da-7328-48b5-aa3b-19753fd1b66f": {
+    "asset": 1662928731209,
+    "meta": 1662928731216,
+    "relativePath": "Resource\\Prefabs\\cards_record_layer2.prefab"
+  },
+  "144ba8bb-2381-4821-8d0c-8062b137524e": {
+    "asset": 1662930216832,
+    "meta": 1662930218746,
+    "relativePath": "Script\\component\\cardsRecordLayer.ts"
+  },
+  "fba78ce3-2b82-421e-854c-9a379a7d0fbc": {
+    "asset": 1662930437848,
+    "meta": 1662930446355,
+    "relativePath": "Script\\component\\bottomBar.ts"
+  },
+  "d8edec68-3064-47ca-ad1e-d29e56265459": {
+    "asset": 1662931994157,
+    "meta": 1662932009599,
+    "relativePath": "Script\\component\\ruleComponent.ts"
+  },
+  "e9677c47-e1f6-465b-bc1b-a093d2fa343c": {
+    "asset": 1662932513746,
+    "meta": 1662932530033,
+    "relativePath": "Script\\component\\gameData.ts"
+  },
+  "3b6be81d-876b-4f11-9275-96b53dd5fc67": {
+    "asset": 1662932639354,
+    "meta": 1662932644060,
+    "relativePath": "Script\\component\\mainLobby.ts"
+  },
+  "3beda0ee-3b9c-48d9-a8b3-054238107d80": {
+    "asset": 1662932820227,
+    "meta": 1662932826768,
+    "relativePath": "Script\\component\\playerInfo.ts"
+  },
+  "802976b9-73a4-40ef-8840-7211a8d63389": {
+    "asset": 1662932892538,
+    "meta": 1662933057845,
+    "relativePath": "Resource\\Texture\\btn_Record.png"
+  },
+  "fba5998f-1616-4f88-957f-d970219a91a8": {
+    "asset": 1662932892538,
+    "meta": 1662933131629,
+    "relativePath": "Resource\\Texture\\btn_record.png"
   }
 }

@@ -464,5 +464,6 @@ export namespace gameData {
         CARD_BAG = "CARD_BAG",//卡包
         CARD_EXCHANGE = "CARD_EXCHANGE",//集卡兑换
         CARD_RECORD = "CARD_RECORD",//CARD_RECORD
+        CARD_RULE = "CARD_RULE",//规则
     }
 }

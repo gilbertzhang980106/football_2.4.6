@@ -49,6 +49,10 @@ export default class playerInfo extends cc.Component {
         playerInfo.instance.menu_group.active = playerInfo.instance.toggle_menu.isChecked;
     }
 
+    onHideMenuGroup(){
+        playerInfo.instance.menu_group.active = playerInfo.instance.toggle_menu.isChecked = false;
+    }
+
     //切换主界面
     onClickCardReward(){
         DznSocket.emit(gameData.messageFlag.CHANGE_SHOW_LAYER, gameData.SHOW_LAYER_TYPE.MAIN_HOME);
@@ -68,6 +72,13 @@ export default class playerInfo extends cc.Component {
     onClickCardRecord(){
         DznSocket.emit(gameData.messageFlag.CHANGE_SHOW_LAYER, gameData.SHOW_LAYER_TYPE.CARD_RECORD);
     }
+
+     //切换规则界面
+     onClickRule(){
+        playerInfo.instance.onHideMenuGroup();
+        DznSocket.emit(gameData.messageFlag.CHANGE_SHOW_LAYER, gameData.SHOW_LAYER_TYPE.CARD_RULE);
+    }
+
 
     update(dt: number) {
 
