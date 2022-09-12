@@ -81,10 +81,10 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 106
+        "__id__": 107
       },
       {
-        "__id__": 107
+        "__id__": 108
       }
     ],
     "_prefab": null,
@@ -329,7 +329,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "content",
+    "_name": "login_layer",
     "_objFlags": 0,
     "_parent": {
       "__id__": 2
@@ -370,7 +370,11 @@
       }
     ],
     "_active": true,
-    "_components": [],
+    "_components": [
+      {
+        "__id__": 106
+      }
+    ],
     "_prefab": null,
     "_opacity": 255,
     "_color": {
@@ -4957,6 +4961,40 @@
     "_N$horizontalDirection": 0,
     "_N$affectedByScale": false,
     "_id": "b15cyvaMtAupfQIRojsPge"
+  },
+  {
+    "__type__": "1cd26HNOJVHjJoe7Cgayvhg",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 7
+    },
+    "_enabled": true,
+    "login_bg": {
+      "__id__": 6
+    },
+    "img_logo": {
+      "__id__": 13
+    },
+    "account_editbox": {
+      "__id__": 26
+    },
+    "psw_editbox_1": {
+      "__id__": 42
+    },
+    "psw_editbox_2": {
+      "__id__": 53
+    },
+    "psw_editbox_3": {
+      "__id__": 64
+    },
+    "psw_editbox_4": {
+      "__id__": 75
+    },
+    "btn_login": {
+      "__id__": 83
+    },
+    "_id": "2dhvc99j9Ok4K6uW2IljZ2"
   },
   {
     "__type__": "cc.Canvas",

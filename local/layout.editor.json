@@ -13,13 +13,13 @@
         "type": "dock-h",
         "children": [
           {
-            "width": 332.203125,
-            "height": 924,
+            "width": 332,
+            "height": 921.5,
             "type": "dock-v",
             "children": [
               {
-                "width": 332.203125,
-                "height": 394.4375,
+                "width": 332,
+                "height": 392.9375,
                 "type": "panel",
                 "active": 0,
                 "children": [
@@ -27,8 +27,8 @@
                 ]
               },
               {
-                "width": 332.203125,
-                "height": 526.5625,
+                "width": 332,
+                "height": 525.5625,
                 "type": "panel",
                 "active": 0,
                 "children": [
@@ -38,18 +38,18 @@
             ]
           },
           {
-            "width": 1168.140625,
-            "height": 924,
+            "width": 1167.984375,
+            "height": 921.5,
             "type": "dock-v",
             "children": [
               {
-                "width": 1168.140625,
-                "height": 653.0625,
+                "width": 1167.984375,
+                "height": 651.234375,
                 "type": "dock-h",
                 "children": [
                   {
-                    "width": 900.375,
-                    "height": 653.0625,
+                    "width": 899.96875,
+                    "height": 651.234375,
                     "type": "panel",
                     "active": 0,
                     "children": [
@@ -57,8 +57,8 @@
                     ]
                   },
                   {
-                    "width": 264.75,
-                    "height": 653.0625,
+                    "width": 265,
+                    "height": 651.234375,
                     "type": "panel",
                     "active": 0,
                     "children": [
@@ -68,8 +68,8 @@
                 ]
               },
               {
-                "width": 1168.140625,
-                "height": 267.921875,
+                "width": 1167.984375,
+                "height": 267.265625,
                 "type": "panel",
                 "active": 0,
                 "children": [
@@ -81,8 +81,8 @@
             ]
           },
           {
-            "width": 397.640625,
-            "height": 924,
+            "width": 398,
+            "height": 921.5,
             "type": "panel",
             "active": 0,
             "children": [
@@ -105,7 +105,7 @@
       ]
     },
     " common-asset-worker-worker": {},
-    "window-1662965944770": {}
+    " build-worker-worker": {}
   },
   "panels": {
     "preferences": {
@@ -115,8 +115,8 @@
       "height": 565
     },
     "builder": {
-      "x": 2741,
-      "y": 221,
+      "x": 785,
+      "y": 206,
       "width": 516,
       "height": 739
     },

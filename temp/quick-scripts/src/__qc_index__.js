@@ -24,6 +24,8 @@ require('./assets/Script/component/cardsRecordLayer');
 require('./assets/Script/component/gameData');
 require('./assets/Script/component/heartBeat');
 require('./assets/Script/component/layerRewardCard');
+require('./assets/Script/component/loadingScene');
+require('./assets/Script/component/loginScene');
 require('./assets/Script/component/mainLobby');
 require('./assets/Script/component/netCom');
 require('./assets/Script/component/playerInfo');
