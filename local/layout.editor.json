@@ -19,7 +19,7 @@
             "children": [
               {
                 "width": 335,
-                "height": 320.828125,
+                "height": 496.734375,
                 "type": "panel",
                 "active": 0,
                 "children": [
@@ -28,7 +28,7 @@
               },
               {
                 "width": 335,
-                "height": 613.671875,
+                "height": 437.765625,
                 "type": "panel",
                 "active": 0,
                 "children": [
@@ -104,7 +104,10 @@
         "cocos-services"
       ]
     },
-    " common-asset-worker-worker": {}
+    " common-asset-worker-worker": {},
+    "window-1662945834337": {},
+    " build-worker-worker": {},
+    "window-1662952440531": {}
   },
   "panels": {
     "preferences": {
@@ -120,8 +123,8 @@
       "height": 739
     },
     "project-settings": {
-      "x": 2353,
-      "y": 327,
+      "x": 945,
+      "y": 339,
       "width": 600,
       "height": 565
     }
