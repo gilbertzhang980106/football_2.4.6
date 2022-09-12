@@ -29,39 +29,39 @@ export default class card extends cc.Component {
 
 
     static instance: card = null;
-    static cardId = null;
+    public cardId = null;
 
     onLoad() {
-        card.instance = this;
+        // this.instance = this;
     }
 
     start() {
-        card.instance.bg_guang.active = false;
-        card.instance.lb_num.node.active = false;
+        this.bg_guang.active = false;
+        this.lb_num.node.active = false;
     }
 
     //渲染卡片信息
     init(data: apiData.card) {
-        if (data.img.length > 0) utils.spriteSetImgByUrl(card.instance.img_card, data.img_text);
-        card.instance.lb_type.string = data.type_text;
-        card.instance.lb_name.string = data.title;
-        card.instance.lb_level.string = data.level;
-        card.instance.lb_rate.string = data.rate;
-        card.cardId = data.id;
+        if (data.img.length > 0) utils.spriteSetImgByUrl(this.img_card, data.img_text);
+        this.lb_type.string = data.type_text;
+        this.lb_name.string = data.title;
+        this.lb_level.string = data.level;
+        this.lb_rate.string = data.rate;
+        this.cardId = data.id;
     }
 
     setGuang(isShowGuang: boolean) {
-        card.instance.bg_guang.active = isShowGuang;
+        this.bg_guang.active = isShowGuang;
     }
 
     setNum(num: any) {
-        card.instance.lb_num.node.active = true;
-        card.instance.lb_num.string = num + '';
+        this.lb_num.node.active = true;
+        this.lb_num.string = num + '';
     }
 
     setScale() {
-        card.instance.node.scaleX = 0.35;
-        card.instance.node.scaleY = 0.35;
+        this.node.scaleX = 0.35;
+        this.node.scaleY = 0.35;
     }
 
     update(dt: number) {
