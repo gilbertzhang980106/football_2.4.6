@@ -58,7 +58,7 @@
     "_groupIndex": 0,
     "groupIndex": 0,
     "autoReleaseAssets": false,
-    "_id": "16JWwlK39FSKk7wD2sGVpA"
+    "_id": "7903a577-5376-4600-86f6-d299db3d3b3f"
   },
   {
     "__type__": "cc.Node",
@@ -1193,9 +1193,9 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Enter text here...",
-    "_N$string": "Enter text here...",
-    "_fontSize": 20,
+    "_string": "输入华体会账号",
+    "_N$string": "输入华体会账号",
+    "_fontSize": 15,
     "_lineHeight": 25,
     "_enableWrapText": false,
     "_N$file": null,
@@ -1930,8 +1930,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Enter text here...",
-    "_N$string": "Enter text here...",
+    "_string": "",
+    "_N$string": "",
     "_fontSize": 20,
     "_lineHeight": 25,
     "_enableWrapText": false,
@@ -1984,8 +1984,8 @@
     },
     "_enabled": true,
     "_string": "",
-    "returnType": 0,
-    "maxLength": 8,
+    "returnType": 1,
+    "maxLength": 1,
     "_tabIndex": 0,
     "editingDidBegan": [],
     "textChanged": [],
@@ -2000,7 +2000,7 @@
     "_N$background": {
       "__id__": 34
     },
-    "_N$inputFlag": 5,
+    "_N$inputFlag": 0,
     "_N$inputMode": 6,
     "_N$stayOnTop": false,
     "_id": "b5bhWwbQZJVp4Lv5ERq/bc"
@@ -2402,8 +2402,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Enter text here...",
-    "_N$string": "Enter text here...",
+    "_string": "",
+    "_N$string": "",
     "_fontSize": 20,
     "_lineHeight": 25,
     "_enableWrapText": false,
@@ -2456,8 +2456,8 @@
     },
     "_enabled": true,
     "_string": "",
-    "returnType": 0,
-    "maxLength": 8,
+    "returnType": 5,
+    "maxLength": 1,
     "_tabIndex": 0,
     "editingDidBegan": [],
     "textChanged": [],
@@ -2472,7 +2472,7 @@
     "_N$background": {
       "__id__": 45
     },
-    "_N$inputFlag": 5,
+    "_N$inputFlag": 0,
     "_N$inputMode": 6,
     "_N$stayOnTop": false,
     "_id": "fepzv8fDhGhah0uhJVOp9t"
@@ -2874,8 +2874,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Enter text here...",
-    "_N$string": "Enter text here...",
+    "_string": "",
+    "_N$string": "",
     "_fontSize": 20,
     "_lineHeight": 25,
     "_enableWrapText": false,
@@ -2928,8 +2928,8 @@
     },
     "_enabled": true,
     "_string": "",
-    "returnType": 0,
-    "maxLength": 8,
+    "returnType": 5,
+    "maxLength": 1,
     "_tabIndex": 0,
     "editingDidBegan": [],
     "textChanged": [],
@@ -2944,7 +2944,7 @@
     "_N$background": {
       "__id__": 56
     },
-    "_N$inputFlag": 5,
+    "_N$inputFlag": 0,
     "_N$inputMode": 6,
     "_N$stayOnTop": false,
     "_id": "fa3omXHrdJObw/rUSUUmGt"
@@ -3346,8 +3346,8 @@
     ],
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
-    "_string": "Enter text here...",
-    "_N$string": "Enter text here...",
+    "_string": "",
+    "_N$string": "",
     "_fontSize": 20,
     "_lineHeight": 25,
     "_enableWrapText": false,
@@ -3400,8 +3400,8 @@
     },
     "_enabled": true,
     "_string": "",
-    "returnType": 0,
-    "maxLength": 8,
+    "returnType": 1,
+    "maxLength": 1,
     "_tabIndex": 0,
     "editingDidBegan": [],
     "textChanged": [],
@@ -3416,7 +3416,7 @@
     "_N$background": {
       "__id__": 67
     },
-    "_N$inputFlag": 5,
+    "_N$inputFlag": 0,
     "_N$inputMode": 6,
     "_N$stayOnTop": false,
     "_id": "82L2EV86dARpcq+9wTcCTj"
