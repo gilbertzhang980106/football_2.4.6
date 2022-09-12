@@ -625,8 +625,8 @@
     "relativePath": "Resource\\Prefabs\\btn_gp_2.prefab"
   },
   "0a338bd3-51a2-4fa2-ba88-c6522eb7ca8c": {
-    "asset": 1662698130803,
-    "meta": 1662698130902,
+    "asset": 1662960512690,
+    "meta": 1662960512704,
     "relativePath": "Resource\\Prefabs\\alert_panel.prefab"
   },
   "f0d10d00-a7e1-4241-a243-bb9ff76bac54": {
@@ -1365,8 +1365,8 @@
     "relativePath": "Resource\\Prefabs\\player_info.prefab"
   },
   "2d2f792f-a40c-49bb-a189-ed176a246e49": {
-    "asset": 1662945851000,
-    "meta": 1662945851032,
+    "asset": 1662961020915,
+    "meta": 1662961020937,
     "relativePath": "Scene\\mainLobby.fire"
   },
   "b417d7da-7328-48b5-aa3b-19753fd1b66f": {

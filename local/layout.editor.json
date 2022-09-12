@@ -19,7 +19,7 @@
             "children": [
               {
                 "width": 335,
-                "height": 496.734375,
+                "height": 337.8125,
                 "type": "panel",
                 "active": 0,
                 "children": [
@@ -28,7 +28,7 @@
               },
               {
                 "width": 335,
-                "height": 437.765625,
+                "height": 596.671875,
                 "type": "panel",
                 "active": 0,
                 "children": [
@@ -105,9 +105,7 @@
       ]
     },
     " common-asset-worker-worker": {},
-    "window-1662945834337": {},
-    " build-worker-worker": {},
-    "window-1662952440531": {}
+    " build-worker-worker": {}
   },
   "panels": {
     "preferences": {
