@@ -73,7 +73,7 @@ export default class mainLobby extends cc.Component {
         mainLobby.instance.playerInfo.getComponent('playerInfo').init(data.user);
 
         //初始化中间显示区域内容
-        // mainLobby.instance.show_content.active = true;
+        mainLobby.instance.show_content.active = true;
         mainLobby.instance.layer_reward_card.getComponent("layerRewardCard").init(data.config);
 
         //初始化活动规则模块
@@ -106,9 +106,10 @@ export default class mainLobby extends cc.Component {
                     break;
                 case gameData.SHOW_LAYER_TYPE.CARD_EXCHANGE:
                     mainLobby.instance.show_content.active = true;//显示父级面板
+                      //重新设置show_content的高度
+                      mainLobby.instance.show_content.height = cc.instantiate(this.layer_card_exchange).height;
                     cc.instantiate(this.layer_card_exchange).parent = mainLobby.instance.show_content;
-                    //重新设置show_content的高度
-                    mainLobby.instance.show_content.height = cc.instantiate(this.layer_card_exchange).height;
+                  
                     break;
                 case gameData.SHOW_LAYER_TYPE.CARD_RECORD:
                     mainLobby.instance.show_content.active = true;//显示父级面板
@@ -116,12 +117,12 @@ export default class mainLobby extends cc.Component {
                     //重新设置show_content的高度
                     mainLobby.instance.show_content.height = cc.instantiate(this.cards_record_layer).height;
                     break;
-                case gameData.SHOW_LAYER_TYPE.CARD_RULE://规则
-                    mainLobby.instance.show_content.active = true;//显示父级面板
-                    cc.instantiate(this.rule_info).parent = mainLobby.instance.show_content;
-                    //重新设置show_content的高度
-                    mainLobby.instance.show_content.height = cc.instantiate(this.rule_info).height;
-                    break;
+                // case gameData.SHOW_LAYER_TYPE.CARD_RULE://规则
+                //     mainLobby.instance.show_content.active = true;//显示父级面板
+                //     cc.instantiate(this.rule_info).parent = mainLobby.instance.show_content;
+                //     //重新设置show_content的高度
+                //     mainLobby.instance.show_content.height = cc.instantiate(this.rule_info).height;
+                //     break;
             }
         }
     }

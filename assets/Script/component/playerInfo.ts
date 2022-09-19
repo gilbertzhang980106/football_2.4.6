@@ -18,11 +18,11 @@ export default class playerInfo extends cc.Component {
     @property(cc.Label)
     myCard: cc.Label = null;
 
-    @property(cc.Toggle)
-    toggle_menu: cc.Toggle = null;
+    // @property(cc.Toggle)
+    // toggle_menu: cc.Toggle = null;
 
-    @property(cc.Node)
-    menu_group: cc.Node = null;
+    // @property(cc.Node)
+    // menu_group: cc.Node = null;
 
 
     static instance: playerInfo = null;
@@ -42,16 +42,16 @@ export default class playerInfo extends cc.Component {
         playerInfo.instance.myScore.string = data.points.toString();
         // playerInfo.instance.myCard.string = data.card.toString();
         utils.spriteSetImgByUrl(playerInfo.instance.headImg, data.avatar);
-        playerInfo.instance.menu_group.active = playerInfo.instance.toggle_menu.isChecked;
+        // playerInfo.instance.menu_group.active = playerInfo.instance.toggle_menu.isChecked;
     }
 
-    onShowMenuGroup(){
-        playerInfo.instance.menu_group.active = playerInfo.instance.toggle_menu.isChecked;
-    }
+    // onShowMenuGroup(){
+    //     playerInfo.instance.menu_group.active = playerInfo.instance.toggle_menu.isChecked;
+    // }
 
-    onHideMenuGroup(){
-        playerInfo.instance.menu_group.active = playerInfo.instance.toggle_menu.isChecked = false;
-    }
+    // onHideMenuGroup(){
+    //     playerInfo.instance.menu_group.active = playerInfo.instance.toggle_menu.isChecked = false;
+    // }
 
     //切换主界面
     onClickCardReward(){
@@ -74,10 +74,10 @@ export default class playerInfo extends cc.Component {
     }
 
      //切换规则界面
-     onClickRule(){
-        playerInfo.instance.onHideMenuGroup();
-        DznSocket.emit(gameData.messageFlag.CHANGE_SHOW_LAYER, gameData.SHOW_LAYER_TYPE.CARD_RULE);
-    }
+    //  onClickRule(){
+    //     playerInfo.instance.onHideMenuGroup();
+    //     DznSocket.emit(gameData.messageFlag.CHANGE_SHOW_LAYER, gameData.SHOW_LAYER_TYPE.CARD_RULE);
+    // }
 
 
     update(dt: number) {

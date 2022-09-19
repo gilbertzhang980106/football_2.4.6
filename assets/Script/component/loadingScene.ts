@@ -23,7 +23,7 @@ export default class loadingScene extends cc.Component {
         //假的加载过程，延迟五秒加载主场景
         this.scheduleOnce(() => {
             cc.director.loadScene("mainLobby");
-        }, 5);
+        }, 1);
     }
 
     /** 资源加载进度*/

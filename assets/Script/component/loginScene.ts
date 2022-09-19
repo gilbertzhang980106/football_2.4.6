@@ -54,7 +54,7 @@ export default class loginScene extends cc.Component {
             //跳转loading场景
             this.scheduleOnce(() => {
                 cc.director.loadScene("loading");
-            }, 3);
+            }, 1);
         });
     }
 
